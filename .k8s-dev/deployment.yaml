@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maxx-marketing
+  labels:
+    app: maxx-marketing
+  namespace: 	ai-development
+spec:
+  replicas: 1
+  revisionHistoryLimit: 4
+  selector:
+    matchLabels:
+      app: maxx-marketing
+  template:
+    metadata:
+      labels:
+        app: maxx-marketing
+    spec:
+      imagePullSecrets:
+      - name: maxx-marketing-reg
+      terminationGracePeriodSeconds: 20
+      containers:
+      - name: maxx-marketing
+        image: {{DOCKER_REGISTRY}}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3011
+          name: maxx-marketing
+        resources:
+          limits:
+            cpu: "250m"
+            memory: "250Mi"
+          requests:
+            cpu: "100m"
+            memory: "100Mi"
+        volumeMounts:
+          - name: env
+            mountPath: /usr/src/app/.env
+            subPath: .env
+            readOnly: true
+        
+      volumes:
+        - name: env
+          secret:
+            secretName: maxx-marketing-svc-secret
