@@ -12,7 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import HomeCarousel from "./_components/home-carousel";
+import HomeCarousel from "../_components/home-carousel";
 const MarketingPage = () => {
   return (
     <div className="flex items-center justify-center flex-col">
@@ -46,7 +46,7 @@ const MarketingPage = () => {
       <Button className="mt-6" size={"lg"} asChild>
         <Link href="/login">Get Taskify for free</Link>
       </Button>
-      <div className="mt-10">
+      <div className="mt-10 w-[90%] flex justify-center">
         <HomeCarousel />
       </div>
     </div>

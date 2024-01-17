@@ -37,13 +37,12 @@ export default function HomeCarousel() {
   };
 
   return (
-    <div>
+    <div className="w-full max-w-full  max-sm:w-[250px] min-md:w-full">
       <Carousel
         setApi={setApi}
         opts={{
           loop: true,
         }}
-        className="w-full max-w-xs"
       >
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
@@ -60,11 +59,11 @@ export default function HomeCarousel() {
         <CarouselNext />
       </Carousel>
       <div className="py-2 text-center text-sm text-muted-foreground">
-        <div className="flex justify-between">
+        <div className="flex justify-between mt-10">
           {Array.from({ length: 5 }).map((_, index) => (
             <button
               className={cn(
-                "h-10 w-10 bg-slate-400",
+                "h-2 w-2 bg-slate-400 rounded-full",
                 current - 1 === index && "bg-red-800"
               )}
               onClick={() => handleSlideChange(index)}
