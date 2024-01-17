@@ -31,7 +31,9 @@ export default function HomeCarousel() {
 
   const handleSlideChange = (index: number) => {
     setCurrent(index + 1);
-    api.scrollTo(index);
+    if (api) {
+      api.scrollTo(index);
+    }
   };
 
   return (
