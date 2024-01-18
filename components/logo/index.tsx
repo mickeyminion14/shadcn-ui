@@ -6,9 +6,9 @@ import localFont from "next/font/local";
 
 export const Logo = () => {
   return (
-    <Link href="/">
+    <Link href="/" className="z-20">
       <div className="hover:opacity-75 transition items-center gap-x-2">
-        <Image src="/images/logo.svg" alt="Logo" height={40} width={150} />
+        <Image src="/images/logo.png" alt="Logo" height={40} width={180} />
       </div>
     </Link>
   );
