@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         style={{
-          backgroundImage: `url(${"/images/background.png"})`,
+          backgroundImage: `url(${"/images/background.jpg"})`,
           backgroundPosition: "center",
           backgroundSize: "100%",
         }}

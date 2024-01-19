@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "./_components/navbar";
 import { Footer } from "./_components/footer";
+import ScrollToTopButton from "./_components/scroll-to-top-button";
 const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
@@ -13,6 +14,7 @@ const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
       >
         {children}
       </main>
+      <ScrollToTopButton />
       <Footer />
     </>
   );

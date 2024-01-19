@@ -32,17 +32,17 @@ const MarketingPage = () => {
         </div>
       </div>
 
-      <div className="w-full mt-32 md:max-w-screen-2xl">
+      <div className="w-full mt-24 mb-24 md:max-w-screen-2xl">
         <div className=" mx-auto w-full max-w-[calc(100%-284px)]">
-          <div className="text-black text-center font-semibold text-xl sm:text-3xl md:text-5xl ">
+          <div className="text-white text-center font-semibold text-xl sm:text-3xl md:text-5xl ">
             Main App Features
           </div>
           <div className="mt-24 flex justify-between">
             <div className="flex flex-col py-[70px] max-w-[400px]">
-              <div className="text-black font-bold text-5xl text-left">
+              <div className="text-white font-bold text-5xl text-left">
                 Lorem ipsum dolor sit
               </div>
-              <div className="mt-4 font-normal text-black text-xl">
+              <div className="mt-4 font-normal text-[#D7D8D9] text-xl">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien,
                 est felis, sagittis viverra nulla mattis scelerisque. Eget cras
                 integer.
@@ -57,9 +57,9 @@ const MarketingPage = () => {
                       height={24}
                       alt="coach icon"
                     />
-                    <div className="text-black font-bold text-4xl">100+</div>
+                    <div className="text-white font-bold text-4xl">100+</div>
                   </div>
-                  <div className="text-black font-semibold text-xl uppercase">
+                  <div className="text-white font-semibold text-xl uppercase">
                     Coaches
                   </div>
                 </div>
@@ -75,9 +75,9 @@ const MarketingPage = () => {
                       height={24}
                       alt="player icon"
                     />
-                    <div className="text-black font-bold text-4xl">300+</div>
+                    <div className="text-white font-bold text-4xl">300+</div>
                   </div>
-                  <div className="text-black font-semibold text-xl uppercase">
+                  <div className="text-white font-semibold text-xl uppercase">
                     Players
                   </div>
                 </div>
@@ -97,10 +97,10 @@ const MarketingPage = () => {
               <Image src={"/images/frame2.png"} alt="frame2" fill />
             </div>
             <div className="flex flex-col py-[70px] max-w-[400px]">
-              <div className="text-black font-bold text-5xl text-left">
+              <div className="text-white font-bold text-5xl text-left">
                 Lorem ipsum dolor sit
               </div>
-              <div className="mt-4 font-normal text-black text-xl">
+              <div className="mt-4 font-normal text-[#D7D8D9] text-xl">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien,
                 est felis, sagittis viverra nulla mattis scelerisque. Eget cras
                 integer.
@@ -115,10 +115,10 @@ const MarketingPage = () => {
           </div>
           <div className="mt-24 flex justify-between">
             <div className="flex flex-col py-[70px] max-w-[400px]">
-              <div className="text-black font-bold text-5xl text-left">
+              <div className="text-white font-bold text-5xl text-left">
                 Lorem ipsum dolor sit
               </div>
-              <div className="mt-4 font-normal text-black text-xl">
+              <div className="mt-4 font-normal text-[#D7D8D9] text-xl">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien,
                 est felis, sagittis viverra nulla mattis scelerisque. Eget cras
                 integer.
@@ -126,10 +126,10 @@ const MarketingPage = () => {
               <div className="mt-12 flex flex-col  justify-between">
                 {categories.map((category, idx) => (
                   <div
-                    className="bg-white mt-2 h-[48px] max-w-[325px] w-full flex items-center justify-between px-4 rounded-2xl"
+                    className="bg-[#2D3035] mt-2 h-[48px] max-w-[325px] w-full flex items-center justify-between px-4 rounded-2xl"
                     key={idx}
                   >
-                    <div>{category}</div>
+                    <div className="text-white">{category}</div>
                     <div>
                       <Image
                         alt="check"
@@ -149,6 +149,57 @@ const MarketingPage = () => {
             </div>
             <div className="max-w-[100%] max-h-[100%] h-[620px] w-[566px] relative">
               <Image src={"/images/frame3.png"} alt="frame3" fill />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[#2A2C74] h-[20vh] lg:h-[40vh] xl:h-[70vh] w-full rounded-2xl flex relative">
+        <div
+          className="w-full  h-full relative  max-w-[60%]"
+          style={{
+            background: `url(${"/images/frame4.png"})`,
+            backgroundSize: "100%",
+            backgroundPosition: "bottom",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* <Image
+            alt="frame4"
+            className="h-auto"
+            fill
+            objectFit="contain"
+            objectPosition="bottom"
+            src={"/images/frame4.png"}
+          /> */}
+        </div>
+        <div className="max-w-[40%] w-full absolute left-[50%] top-[50%]  translate-y-[-50%]">
+          <div className="flex flex-col max-w-[430px]">
+            <div className="text-white text-5xl font-bold">
+              Get Started Now, For Free!
+            </div>
+            <div className="text-white mt-6 font-normal text-xl">
+              Well, what are you waiting for? Download our app to experience
+              Maxxx level.
+            </div>
+            <div className="mt-12 flex justify-between">
+              <Button
+                variant={"primary_outline"}
+                className="h-[64px] w-[190px] text-white"
+              >
+                <div className="h-6 w-6 relative mr-4">
+                  <Image fill alt="ios icon" src={"/images/ios.png"} />
+                </div>
+                App Store
+              </Button>
+              <Button
+                variant={"primary_outline"}
+                className="h-[64px] w-[190px] text-white"
+              >
+                <div className="h-6 w-6 relative mr-4">
+                  <Image fill alt="ios icon" src={"/images/android.png"} />
+                </div>
+                Play Store
+              </Button>
             </div>
           </div>
         </div>
