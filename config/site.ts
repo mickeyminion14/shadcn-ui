@@ -1,8 +1,11 @@
 export const siteConfig = {
   basic: {
+    url: "https://shadcn-ui-mu.vercel.app/",
+    appName: "Maxxx Performance",
     name: "Maxxx Performance",
     description:
       "Maxxx Performance understands that mental fitness is the key to unlocking your true athletic abilities. Imagine having a personal mental performance coach and trainer right at your fingertips. No matter your sport or level of expertise, Maxxx Performance adapts to your unique strengths and helps you overcome mental barriers.  Maxxx isn't just for individuals—it empowers teams, coaches, recruiters, and parents too. ",
+    keywords: "Sports Coaches Players Guardians Mental Health Leadership",
   },
   aboutUs: {
     name: "About Us",
