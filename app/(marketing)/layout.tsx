@@ -9,6 +9,7 @@ const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
       <main
         style={{
           minHeight: "calc(100vh - 80px)",
+          marginTop: "80px",
         }}
         className="pb-16"
       >

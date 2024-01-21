@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.scss";
 import { textFont } from "@/lib/fonts";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
-  description: siteConfig.description,
+  title: {
+    default: siteConfig.basic.name,
+    template: `${siteConfig.basic.name} | %s`,
+  },
+  description: siteConfig.basic.description,
 };
 export default function RootLayout({
   children,

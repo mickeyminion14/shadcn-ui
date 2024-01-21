@@ -19,7 +19,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="mt-24 flex justify-between">
-          <div className=" text-white">
+          <div className="text-white">
             <div className="flex justify-between gap-x-2 max-w-[200px]">
               <Button className="h-16 w-16" variant={"primary_outline"}>
                 <div className="w-6 h-6 relative">

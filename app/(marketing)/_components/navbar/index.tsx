@@ -7,7 +7,7 @@ import Links from "./_components/links";
 
 export const Navbar = () => {
   return (
-    <div className="w-full h-[80px] p-6 bg-transparent flex items-center absolute top-0 left-0 z-10">
+    <div className="w-full h-[80px] p-6 bg-transparent flex items-center fixed top-0 left-0 z-10">
       <div className="md:max-w-screen-2xl mx-auto flex items-center w-full justify-between">
         <div className="space-x-4 flex items-center justify-between w-full">
           <Logo />

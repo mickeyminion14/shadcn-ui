@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 import { ArrowRight } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 
+export function generateMetadata(): Metadata {
+  return {
+    title: siteConfig.home.name,
+    description: siteConfig.home.description,
+  };
+}
 const MarketingPage = () => {
   const categories = [
     "Performance",
@@ -11,7 +19,7 @@ const MarketingPage = () => {
   ];
   return (
     <div className="flex items-center justify-center flex-col">
-      <div className="min-w-full h-[calc(100vh-150px)] relative">
+      <section className="min-w-full h-[calc(100vh-120px)] mt-[-80px] relative">
         <video
           className="w-full h-[100%] object-cover absolute"
           preload="auto"
@@ -21,7 +29,7 @@ const MarketingPage = () => {
         >
           <source src="/videos/draft.mp4" />
         </video>
-        <div className="absolute max-h-[calc(100vh-150px)] bottom-[20%] left-[50%] translate-y-[50%] translate-x-[-50%]">
+        {/* <div className="absolute max-h-[calc(100vh-150px)] bottom-[20%] left-[50%] translate-y-[50%] translate-x-[-50%]">
           <div className="text-white font-bold text-xl sm:text-4xl md:text-6xl text-center">
             Lorem ipsum dolor sit
           </div>
@@ -29,12 +37,12 @@ const MarketingPage = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est
             felis, sagittis viverra
           </div>
-        </div>
-      </div>
+        </div> */}
+      </section>
 
-      <div className="w-full mt-24 mb-24 md:max-w-screen-2xl">
+      <section className="w-full mt-16 mb-24 md:max-w-screen-2xl">
         <div className=" mx-auto w-full max-w-[calc(100%-284px)]">
-          <div className="text-white text-center font-semibold text-xl sm:text-3xl md:text-5xl ">
+          <div className="text-white text-center font-semibold text-xl sm:text-3xl md:text-5xl title">
             Main App Features
           </div>
           <div className="mt-24 flex justify-between">
@@ -152,8 +160,8 @@ const MarketingPage = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-[#2A2C74] h-[20vh] lg:h-[40vh] xl:h-[70vh] w-full rounded-2xl flex relative">
+      </section>
+      <section className="bg-[#2A2C74] h-[20vh] lg:h-[40vh] xl:h-[70vh] w-full rounded-2xl flex relative">
         <div
           className="w-full  h-full relative  max-w-[60%]"
           style={{
@@ -203,7 +211,7 @@ const MarketingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

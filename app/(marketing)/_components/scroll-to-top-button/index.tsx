@@ -39,6 +39,7 @@ export default function ScrollToTopButton() {
       initial="hide"
       animate={controls}
       onClick={scrollToTop}
+      name="scroll to top"
     >
       <ArrowUp />
     </motion.button>
