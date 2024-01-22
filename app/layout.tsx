@@ -24,14 +24,21 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteConfig.basic.url,
-    title: siteConfig.basic.name,
+    title: {
+      default: siteConfig.basic.name,
+      template: `%s | ${siteConfig.basic.name}`,
+    },
     description: siteConfig.basic.description,
     siteName: siteConfig.basic.appName,
     images: [
       {
         url: "https://maxx-marketing.appskeeper.in/images/logo.png",
+        height: 600,
+        width: 1200,
+        type: "image/png",
       },
     ],
+    locale: "en_US",
   },
   applicationName: siteConfig.basic.appName,
 };
