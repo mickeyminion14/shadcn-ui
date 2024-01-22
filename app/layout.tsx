@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: siteConfig.basic.description,
     images: [
       {
-        url: "https://maxx-marketing.appskeeper.in/images/logo.png/images/logo.png",
+        url: "https://maxx-marketing.appskeeper.in/images/logo.png",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.basic.appName,
     images: [
       {
-        url: "https://maxx-marketing.appskeeper.in/images/logo.png/images/logo.png",
+        url: "https://maxx-marketing.appskeeper.in/images/logo.png",
       },
     ],
   },
