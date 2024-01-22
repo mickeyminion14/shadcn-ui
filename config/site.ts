@@ -1,6 +1,5 @@
 export const siteConfig = {
   basic: {
-    url: "https://shadcn-ui-mu.vercel.app/",
     appName: "Maxxx Performance",
     name: "Maxxx Performance",
     description:
