@@ -3,6 +3,7 @@ import "./globals.scss";
 import { textFont } from "@/lib/fonts";
 import { siteConfig } from "@/config/site";
 
+//basic meta data
 export const metadata: Metadata = {
   title: {
     default: siteConfig.basic.name,
