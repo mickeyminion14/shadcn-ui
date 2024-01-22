@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 import styles from "./about-us.module.scss";
 import { siteConfig } from "@/config/site";
+import HeroSection from "./_components/hero-section";
+import MeetOurTeam from "./_components/meet-our-team";
+import WhoWeAre from "./_components/who-we-are";
+import OurMission from "./_components/our-mission";
 
 export function generateMetadata(): Metadata {
   return {
@@ -9,7 +13,16 @@ export function generateMetadata(): Metadata {
   };
 }
 const AboutUs = () => {
-  return <div className={styles.title}>About us</div>;
+  return (
+    <>
+      <div className={styles.aboutWrapper}>
+        <HeroSection />
+        <WhoWeAre />
+        <OurMission />
+        <MeetOurTeam />
+      </div>
+    </>
+  );
 };
 
 export default AboutUs;
