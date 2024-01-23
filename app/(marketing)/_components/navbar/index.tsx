@@ -14,11 +14,11 @@ export const Navbar = () => {
           <div className="z-20">
             <Links />
           </div>
-          <Button className="bg-[#2D3035] rounded-2xl text-white h-[60px] w-[160px] z-20">
+          <Button className="bg-[#2D3035] rounded-2xl text-white h-[60px] w-[160px] z-20 text-md">
             <Image
               className="mr-2"
-              width={16}
-              height={16}
+              width={20}
+              height={20}
               alt="email"
               src={"/images/email.png"}
             />
