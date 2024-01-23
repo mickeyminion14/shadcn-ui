@@ -1,11 +1,11 @@
 import HeroSection from "./_components/hero-section";
-import LocationMap from "./_components/location-map";
+// import LocationMap from "./_components/location-map";
 
 const ContactUs = () => {
   return (
     <div className="contactUsWrapper">
       <HeroSection />
-      <LocationMap />
+      {/* <LocationMap /> */}
     </div>
   );
 };
