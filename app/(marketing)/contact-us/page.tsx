@@ -9,7 +9,7 @@ const ContactUs = () => {
       <HeroSection />
       {/* <LocationMap /> */}
       <GetStarted />
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div>
   );
 };
