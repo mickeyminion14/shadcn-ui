@@ -25,6 +25,8 @@
 
 .getStatedContentWrapper {
     width: 40%;
+    position: relative;
+    z-index: 1;
 }
 
 .getStatedInfoBlock {
@@ -61,6 +63,12 @@
         .button {
             height: 64px;
             width: 194px;
+
+            &:hover {
+                svg path {
+                    fill: #2A2C74
+                }
+            }
 
             svg {
                 margin-right: 16px;

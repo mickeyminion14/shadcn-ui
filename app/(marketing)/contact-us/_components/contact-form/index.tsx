@@ -1,9 +1,8 @@
-"use strict";
+"use client";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-("use strict");
 import {
   Form,
   FormControl,
@@ -13,13 +12,29 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import styles from "./contact.module.scss";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  fullName: z.string().min(2, {
+    message: "Full name must be at least 2 characters.",
   }),
+
+  emailAddress: z
+    .string()
+    .nonempty("Email address is required")
+    .email({ message: "Email address be a valid email" }),
+
+  role: z.string({
+    required_error: "Please select an role.",
+  }),
+  phone: z.string().nonempty("Phone is required"),
+  message: z.string().min(2, {
+    message: "Message must be at least 2 characters.",
+  }),
+  agree: z.boolean().default(false).optional(),
 });
 
 const ContactForm = () => {
@@ -27,7 +42,12 @@ const ContactForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      fullName: "",
+      emailAddress: "",
+      role: "",
+      phone: "",
+      message: "",
+      agree: false,
     },
   });
 
@@ -49,18 +69,96 @@ const ContactForm = () => {
         <div className={styles.formWrapper}>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <div className={styles.formGroup}>
+                <FormField
+                  control={form.control}
+                  name="fullName"
+                  render={({ field }) => (
+                    <FormItem className={styles.formField}>
+                      <FormLabel>Full Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter full name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="emailAddress"
+                  render={({ field }) => (
+                    <FormItem className={styles.formField}>
+                      <FormLabel>Email Address</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter your email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <FormField
+                  control={form.control}
+                  name="role"
+                  render={({ field }) => (
+                    <FormItem className={styles.formField}>
+                      <FormLabel>Role *</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Select Role" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem className={styles.formField}>
+                      <FormLabel>Phone Number</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Enter your phone number"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <FormField
                 control={form.control}
-                name="username"
+                name="phone"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Username</FormLabel>
+                  <FormItem className={styles.formField}>
+                    <FormLabel>Main Message</FormLabel>
                     <FormControl>
-                      <Input placeholder="shadcn" {...field} />
+                      <Textarea
+                        placeholder="Hey. I would like to report a bug, Thanks"
+                        className="resize-none"
+                        {...field}
+                      />
                     </FormControl>
-                    <FormDescription>
-                      This is your public display name.
-                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="agree"
+                render={({ field }) => (
+                  <FormItem className={styles.formField}>
+                    <FormLabel>I Agree to Terms& Conditions</FormLabel>
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
