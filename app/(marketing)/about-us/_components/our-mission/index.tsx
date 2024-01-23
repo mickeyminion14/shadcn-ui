@@ -6,23 +6,20 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import SettingIcon from "../icons/setting";
 import styles from "./our-mission.module.scss";
-import { ArrowDownRight } from "lucide-react";
+import { ArrowDownRight, ArrowRight } from "lucide-react";
 
 const slidesData = [
   {
-    title: "Lorem ipsum dolor",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer sagittis viverra nulla mattis scelerisque.",
-    img: "/images/about/wwr1.png",
+    title: "Our Mission",
+    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer.",
   },
   {
-    title: "Lorem ipsum dolor",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer sagittis viverra nulla mattis scelerisque.",
-    img: "/images/about/wwr2.png",
+    title: "Our Vision",
+    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer.",
   },
   {
-    title: "Lorem ipsum dolor",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer sagittis viverra nulla mattis scelerisque.",
-    img: "/images/about/wwr3.png",
+    title: "Our Goal",
+    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer.",
   },
 ];
 
@@ -31,11 +28,8 @@ type PropType = {
   options?: EmblaOptionsType;
 };
 
-const OurMission: React.FC<PropType> = ({
-  slideCount = 5,
-  options = { axis: "y" },
-}) => {
-  const slides = Array.from(Array(slideCount).keys());
+const OurMission = () => {
+  const options: EmblaOptionsType = { axis: "x", loop: true, duration: 60 };
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -95,15 +89,13 @@ const OurMission: React.FC<PropType> = ({
                           </Button>
                           <h3 className={styles.title}>{item?.title}</h3>
                           <p className={styles.description}>{item?.des}</p>
-                          <div className={styles.counters}>
-                            {index + 1}/{slidesData?.length}
-                          </div>
+
                           <Button
                             variant={"primary_outline"}
                             className={styles.buttonAction}
                           >
                             Meet Our Team
-                            <ArrowDownRight />
+                            <ArrowRight />
                           </Button>
                         </div>
                       </div>
@@ -112,17 +104,23 @@ const OurMission: React.FC<PropType> = ({
                 </div>
               </div>
 
-              <div className={styles.wwrDots}>
-                {scrollSnaps.map((_, index) => (
-                  <button
-                    type="button"
-                    key={index}
-                    onClick={() => scrollTo(index)}
-                    className={`${styles.wwrDot}  ${
-                      index === selectedIndex && styles.wwrDotActive
-                    }`}
-                  />
-                ))}
+              <div className={styles.wwrDosWrapper}>
+                <div className={styles.wwrDots}>
+                  {scrollSnaps.map((_, index) => (
+                    <button
+                      type="button"
+                      key={index}
+                      onClick={() => scrollTo(index)}
+                      className={`${styles.wwrDot}  ${
+                        index === selectedIndex && styles.wwrDotActive
+                      }`}
+                    />
+                  ))}
+                </div>
+                <div className={styles.counters}>
+                  {("0" + (selectedIndex + 1)).slice(-2)}/
+                  {("0" + slidesData?.length).slice(-2)}
+                </div>
               </div>
             </div>
           </div>

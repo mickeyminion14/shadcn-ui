@@ -91,7 +91,7 @@ const MeetOurTeam = () => {
       <section className={styles.meetOurTeam}>
         <div className={styles.meetOurTeamWrapper}>
           <h2 className={styles.meetOurTeamTitle}>
-            Our Mission
+            Meet Our Team
             <div className={styles.embla__buttons}>
               <button
                 type="button"

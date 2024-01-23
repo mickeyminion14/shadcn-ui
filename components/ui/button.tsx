@@ -21,7 +21,7 @@ const buttonVariants = cva(
         primary:
           "h-16 w-[220px] rounded-2xl text-[#111214] text-[18px] bg-white",
         primary_outline:
-          "h-16 w-[220px] rounded-2xl text-white text-[18px] bg-transparent border border-white",
+          "h-16 w-[220px] rounded-2xl text-white text-[18px] bg-transparent border border-white hover:bg-white hover:text-black",
       },
       size: {
         default: "h-10 px-4 py-2",
