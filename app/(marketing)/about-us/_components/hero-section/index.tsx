@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../about-us.module.scss";
+import styles from "./hero-section.module.scss";
 import { Button } from "@/components/ui/button";
 import ArrowDownIcon from "../icons/arrow-down";
 

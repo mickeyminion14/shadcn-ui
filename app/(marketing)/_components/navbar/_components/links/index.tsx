@@ -18,7 +18,7 @@ const Links = () => {
           <li
             className={cn(
               "text-white text-xl font-[400]",
-              pathname == link.url && "font-bold"
+              pathname == link.url && "active"
             )}
           >
             {link.title}
