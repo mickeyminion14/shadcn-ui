@@ -65,7 +65,6 @@ export const Footer = () => {
                   <button type="button" className={styles.subscribeBtn}>
                     <ArrowRight />
                   </button>
-
                   <Input
                     type="email"
                     name="email"

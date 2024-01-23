@@ -42,5 +42,43 @@
 
     .formField {
         width: 100%;
+
+        label {
+            color: #fff;
+            font-family: "Work Sans", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: -0.028px;
+        }
+
+        input,
+        textarea {
+            border-radius: 15px;
+            color: #ffffff;
+            background: #2D3035;
+            border-color: #2D3035;
+            border-width: 0 !important;
+            font-family: "Work Sans", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.048px;
+            padding: 16px;
+            min-height: 56px;
+            transition: .3s ease all;
+            outline: none !important;
+
+            &:focus {
+                border-color: #2D3035;
+                background-color: #333333;
+            }
+
+            &::placeholder {
+                color: #D7D8D9
+            }
+        }
     }
 }
