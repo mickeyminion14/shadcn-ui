@@ -16,11 +16,16 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import styles from "./contact.module.scss";
+import ArrowRight from "../../_icons/arrow-right";
 
 const formSchema = z.object({
-  fullName: z.string().min(2, {
-    message: "Full name must be at least 2 characters.",
-  }),
+  fullName: z
+    .string()
+    .nonempty("Full name is required")
+    .min(2, {
+      message: "Full name must be at least 2 characters.",
+    })
+    .optional(),
 
   emailAddress: z
     .string()
@@ -132,7 +137,7 @@ const ContactForm = () => {
               </div>
               <FormField
                 control={form.control}
-                name="phone"
+                name="message"
                 render={({ field }) => (
                   <FormItem className={styles.formField}>
                     <FormLabel>Main Message</FormLabel>
@@ -147,23 +152,34 @@ const ContactForm = () => {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="agree"
-                render={({ field }) => (
-                  <FormItem className={styles.formField}>
-                    <FormLabel>I Agree to Terms& Conditions</FormLabel>
-                    <FormControl>
-                      <Checkbox
-                        checked={field.value}
-                        onCheckedChange={field.onChange}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit">Submit</Button>
+              <div className={styles.formAgreement}>
+                <FormField
+                  control={form.control}
+                  name="agree"
+                  render={({ field }) => (
+                    <FormItem className={styles.formField}>
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                      </FormControl>
+                      <FormLabel>I Agree to Terms& Conditions</FormLabel>
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className={styles.formButtonGroup}>
+                <Button
+                  type="submit"
+                  variant={"primary_outline"}
+                  className={styles.buttonAction}
+                >
+                  Submit Form
+                  <ArrowRight />
+                </Button>
+              </div>
             </form>
           </Form>
         </div>

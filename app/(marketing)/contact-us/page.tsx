@@ -8,8 +8,8 @@ const ContactUs = () => {
     <div className="contactUsWrapper">
       <HeroSection />
       {/* <LocationMap /> */}
-      <GetStarted />
       <ContactForm />
+      <GetStarted />
     </div>
   );
 };

@@ -42,6 +42,7 @@
 
     .formField {
         width: 100%;
+        position: relative;
 
         label {
             color: #fff;
@@ -59,7 +60,7 @@
             color: #ffffff;
             background: #2D3035;
             border-color: #2D3035;
-            border-width: 0 !important;
+            border-width: 0;
             font-family: "Work Sans", sans-serif;
             font-size: 16px;
             font-style: normal;
@@ -69,16 +70,100 @@
             padding: 16px;
             min-height: 56px;
             transition: .3s ease all;
-            outline: none !important;
+            outline: none;
 
             &:focus {
                 border-color: #2D3035;
                 background-color: #333333;
             }
 
+            &:focus-visible {
+                box-shadow: none;
+            }
+
             &::placeholder {
                 color: #D7D8D9
             }
+        }
+
+        textarea {
+            min-height: 170px;
+        }
+
+        p {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            margin-top: 2px !important;
+
+        }
+
+    }
+
+    .formAgreement {
+        max-width: 270px;
+        margin: 0 auto;
+        padding: 46px 0 0;
+
+        label {
+            color: #D7D8D9;
+            font-family: "Work Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.048px;
+            position: relative;
+            top: -5px;
+            left: 25px;
+        }
+
+
+
+        button[role="checkbox"] {
+            transform: scale(2);
+            border: 1px solid #FFF;
+
+        }
+    }
+}
+
+.formButtonGroup {
+    display: flex;
+    justify-content: center;
+    margin-top: 46px !important;
+}
+
+.buttonAction {
+    width: 238px;
+    height: 64px;
+
+    svg {
+        margin-left: 16px;
+        transition: transform 0.3s ease-out;
+        animation: none;
+
+        path {
+            stroke: #fff;
+        }
+    }
+
+    &:hover svg {
+        animation: hoverAnimation 1s infinite alternate;
+
+        path {
+            stroke: #000;
+        }
+    }
+
+    @keyframes hoverAnimation {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(4px);
         }
     }
 }
