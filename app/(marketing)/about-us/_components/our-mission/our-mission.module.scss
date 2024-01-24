@@ -1,0 +1,237 @@
+// who we are section
+
+.ourMission {
+    padding: 125px 0;
+    overflow: hidden;
+    border-radius: 60px;
+    background: #111214;
+    background-image: url('/images/about/2-about_banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .ourMissionWrapper {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .ourMissionSlider {
+        max-width: 500px;
+    }
+}
+
+
+.sliderWrapper {
+    display: flex;
+
+
+    .infoBlk {
+        max-width: 100%;
+        height: 100%;
+        position: relative;
+        padding-left: 2px;
+
+        .button {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 90px;
+        }
+
+        .title {
+            color: #FFF;
+            font-family: "Work Sans", sans-serif;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 56px;
+            letter-spacing: -0.72px;
+            margin-bottom: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+
+        .description {
+            color: #D7D8D9;
+            font-family: "Work Sans", sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+
+    }
+
+    .infoImage {
+        position: relative;
+        width: 540px;
+        height: 560px;
+        border-radius: 40px;
+        overflow: hidden;
+    }
+}
+
+.embla {
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+    --slide-height: 640px;
+    padding: 0;
+    position: relative;
+}
+
+.embla__viewport {
+    overflow: hidden;
+}
+
+.embla__container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+    margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+    position: relative;
+}
+
+.embla__slide__img {
+    display: block;
+    height: var(--slide-height);
+    width: 100%;
+    object-fit: cover;
+}
+
+.embla__slide__number {
+    width: 4.6rem;
+    height: 4.6rem;
+    z-index: 1;
+    position: absolute;
+    top: calc(var(--slide-spacing) + 0.6rem);
+    right: 0.6rem;
+    border-radius: 50%;
+    background-color: rgba(var(--background-site-rgb-value), 0.85);
+    line-height: 4.6rem;
+    font-weight: 900;
+    text-align: center;
+    pointer-events: none;
+}
+
+.embla__slide__number>span {
+    color: var(--brand-primary);
+    background-image: linear-gradient(45deg,
+            var(--brand-primary),
+            var(--brand-secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.6rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+.wwrDosWrapper {
+    position: relative;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 30px;
+
+    .counters {
+        color: #FFF;
+        font-family: "Work Sans", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.wwrDots {
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+
+    .wwrDot {
+        -webkit-appearance: none;
+        background-color: #ccc;
+        touch-action: manipulation;
+        display: inline-flex;
+        text-decoration: none;
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        height: 10px;
+        width: 10px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.20);
+        transition: .3s ease all;
+
+        &.wwrDotActive {
+            width: 40px;
+            border-radius: 10px;
+            background: #FFF;
+        }
+    }
+}
+
+
+.buttonAction {
+    margin-top: 40px;
+    width: 238px;
+    height: 64px;
+
+    svg {
+        margin-left: 16px;
+        transition: transform 0.3s ease-out;
+        animation: none;
+    }
+
+    &:hover svg {
+        animation: hoverAnimation 1s infinite alternate;
+    }
+
+    @keyframes hoverAnimation {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(4px);
+        }
+    }
+}

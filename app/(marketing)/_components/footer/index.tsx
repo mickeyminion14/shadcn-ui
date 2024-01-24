@@ -1,17 +1,33 @@
+"use client";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, Mail, MailIcon } from "lucide-react";
+import { Mail } from "lucide-react";
 import Image from "next/image";
+import styles from "./footer.module.scss";
+import FacebookIcon from "./icons/facebook";
+import InstagramIcon from "./icons/instagram";
+import YoutubeIcon from "./icons/youtube";
+import ArrowRight from "./icons/arrow-right";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export const Footer = () => {
+  const pathname = usePathname();
+
+  const links: { title: string; url: string }[] = [
+    { title: "Home", url: "/" },
+    { title: "About", url: "/about-us" },
+    { title: "Checkout", url: "/checkout" },
+  ];
+
   return (
-    <div className="w-full p-4  bg-transparent h-[500px]">
+    <footer className={styles.mainFooter}>
       <div className="md:max-w-screen-2xl mx-auto  w-full">
         <div className="flex justify-between">
           <Logo />
-          <div className="w-full max-w-[564px] text-white text-xl font-light">
-            <div>
+          <div className="w-full max-w-[912px] text-white text-xl font-light">
+            <div className={styles.heroText}>
               Sandow provides personalized fitness & diet solutions through the
               power of AI.
             </div>
@@ -20,20 +36,22 @@ export const Footer = () => {
         </div>
         <div className="mt-24 flex justify-between">
           <div className="text-white">
-            <div className="flex justify-between gap-x-2 max-w-[200px]">
+            <div
+              className={`${styles.socialmedia} flex justify-between gap-x-2 max-w-[200px]`}
+            >
               <Button className="h-16 w-16" variant={"primary_outline"}>
-                <div className="w-6 h-6 relative">
-                  <Image alt="fb" src="/images/fb.png" fill />
+                <div className=" w-6 h-6 relative">
+                  <FacebookIcon />
                 </div>
               </Button>
               <Button className="h-16 w-16" variant={"primary_outline"}>
                 <div className="w-6 h-6 relative">
-                  <Image alt="fb" src="/images/yt.png" fill />
+                  <InstagramIcon />
                 </div>
               </Button>
               <Button className="h-16 w-16" variant={"primary_outline"}>
                 <div className="w-6 h-6 relative">
-                  <Image alt="fb" src="/images/instagram.png" fill />
+                  <YoutubeIcon />
                 </div>
               </Button>
             </div>
@@ -44,8 +62,9 @@ export const Footer = () => {
               <div className="w-[300px] mt-2">
                 <label className="relative text-white block">
                   <Mail className="pointer-events-none w-6 h-6 absolute top-1/2 transform -translate-y-1/2 left-3" />
-                  <ArrowRight className="w-6 h-6 absolute top-1/2 transform -translate-y-1/2 right-3 cursor-pointer" />
-
+                  <button type="button" className={styles.subscribeBtn}>
+                    <ArrowRight />
+                  </button>
                   <Input
                     type="email"
                     name="email"
@@ -58,52 +77,40 @@ export const Footer = () => {
             </div>
             <div className="mt-8">Copyright ©2025, All Rights Reserved</div>
           </div>
-          <div className="w-full max-w-[564px] flex justify-between">
-            <div className="flex flex-col gap-y-8">
-              <div className="text-white text-base uppercase font-bold">
-                Main Site Map
-              </div>
-              <div className="text-white text-sm uppercase font-normal opacity-60 cursor-pointer">
-                Home
-              </div>
-              <div className="text-white text-sm uppercase font-normal opacity-60 cursor-pointer">
-                About
-              </div>
-              <div className="text-white text-sm uppercase font-normal opacity-60 cursor-pointer">
-                Checkout
-              </div>
+          <div
+            className={`${styles.footerLinkWrap} w-full max-w-[912px] flex justify-between`}
+          >
+            <div className=" flex flex-col gap-y-10">
+              <div className={styles.footerLinkHeading}>Main Site Map</div>
+              {links.map((link, idx) => (
+                <Link key={idx} href={link.url}>
+                  <div
+                    className={
+                      pathname == link.url
+                        ? `${styles.footerLinks} ${styles.footerLinkActive} `
+                        : styles.footerLinks
+                    }
+                  >
+                    {link.title}
+                  </div>
+                </Link>
+              ))}
             </div>
-            <div className="flex flex-col gap-y-8">
-              <div className="text-white text-base uppercase font-bold">
-                App Features
-              </div>
-              <div className="text-white text-sm uppercase font-normal opacity-60 cursor-pointer">
-                Lorem Ipsum
-              </div>
-              <div className="text-white text-sm uppercase font-normal opacity-60 cursor-pointer">
-                Lorem Ipsum
-              </div>
-              <div className="text-white text-sm uppercase font-normal opacity-60 cursor-pointer">
-                Lorem Ipsum
-              </div>
+            <div className="flex flex-col gap-y-10">
+              <div className={styles.footerLinkHeading}>App Features</div>
+              <div className={styles.footerLinks}>Lorem Ipsum</div>
+              <div className={styles.footerLinks}>Lorem Ipsum</div>
+              <div className={styles.footerLinks}>Lorem Ipsum</div>
             </div>
-            <div className="flex flex-col gap-y-8">
-              <div className="text-white text-base uppercase font-bold">
-                Legal
-              </div>
-              <div className="text-white text-sm uppercase font-normal opacity-60 cursor-pointer">
-                Privacy Policy
-              </div>
-              <div className="text-white text-sm uppercase font-normal opacity-60 cursor-pointer">
-                Terms & Conditions
-              </div>
-              <div className="text-white text-sm uppercase font-normal opacity-60 cursor-pointer">
-                Cookie Policy
-              </div>
+            <div className="flex flex-col gap-y-10">
+              <div className={styles.footerLinkHeading}>Legal</div>
+              <div className={styles.footerLinks}>Privacy Policy</div>
+              <div className={styles.footerLinks}>Terms & Conditions</div>
+              <div className={styles.footerLinks}>Cookie Policy</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };

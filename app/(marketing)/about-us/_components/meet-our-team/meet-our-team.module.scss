@@ -1,0 +1,229 @@
+// who we are section
+
+.meetOurTeam {
+    padding: 125px 0;
+    overflow: hidden;
+
+    .meetOurTeamWrapper {
+        max-width: var(--container-width);
+        margin: 0 auto;
+    }
+
+}
+
+.meetOurTeamTitle {
+    color: #FFF;
+    font-family: "Work Sans", sans-serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    /* 111.111% */
+    letter-spacing: -1.44px;
+    text-align: center;
+    margin-bottom: 96px;
+    position: relative;
+}
+
+.sliderWrapper {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #2D3035;
+    border-radius: 50px;
+
+    .infoBlk {
+
+        position: absolute;
+        z-index: 1;
+        bottom: 40px;
+        left: 40px;
+        width: 100%;
+
+        .title {
+            color: #FFF;
+            font-family: "Work Sans", sans-serif;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .description {
+            color: #D7D8D9;
+            font-family: "Work Sans", sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    }
+
+    .infoImage {
+        position: relative;
+        border-radius: 40px;
+        overflow: hidden;
+        display: flex;
+        width: 100%;
+        height: 495px;
+        align-items: center;
+        // gap: 90px;
+        flex-shrink: 0;
+    }
+}
+
+.embla {
+    --slide-spacing: 45px;
+    --slide-size: 33.33%;
+    --slide-height: 640px;
+    position: relative;
+    padding: 0rem;
+}
+
+.embla__viewport {
+    overflow: hidden;
+}
+
+.embla__container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+    margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+    position: relative;
+}
+
+.embla__slide__img {
+    display: block;
+    height: var(--slide-height);
+    width: 100%;
+    object-fit: cover;
+}
+
+.embla__slide__number {
+    width: 4.6rem;
+    height: 4.6rem;
+    z-index: 1;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    border-radius: 50%;
+    background-color: rgba(var(--background-site-rgb-value), 0.85);
+    line-height: 4.6rem;
+    font-weight: 900;
+    text-align: center;
+    pointer-events: none;
+}
+
+.embla__slide__number>span {
+    color: var(--brand-primary);
+    background-image: linear-gradient(45deg,
+            var(--brand-primary),
+            var(--brand-secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.6rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.embla__buttons {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    gap: 30px;
+}
+
+.embla__button {
+    z-index: 1;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+    width: 64px;
+    height: 64px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 21px;
+    border: 1px solid #FFF;
+    transition: .5s ease-out;
+
+    &:hover {
+        background-color: #ffffff;
+
+        svg {
+            stroke: #111214;
+        }
+    }
+}
+
+.embla__button:disabled {
+    opacity: 0.3;
+}
+
+.embla__button__svg {
+    width: 65%;
+    height: 65%;
+}
+
+
+
+
+// .wwrDots {
+//     z-index: 1;
+//     top: 0;
+//     bottom: 0;
+//     position: absolute;
+//     left: 142px;
+//     right: initial;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+
+//     .wwrDot {
+//         -webkit-appearance: none;
+//         background-color: #ccc;
+//         touch-action: manipulation;
+//         display: inline-flex;
+//         text-decoration: none;
+//         cursor: pointer;
+//         border: 0;
+//         padding: 0;
+//         margin: 0;
+//         display: flex;
+//         align-items: center;
+//         height: 120px;
+//         width: 10px;
+//         border-radius: 0px 10px 10px 0px;
+//         background: rgba(255, 255, 255, 0.10);
+
+//         &.wwrDotActive {
+//             border-radius: 0px 10px 10px 0px;
+//             background: #FFF;
+//         }
+//     }
+// }

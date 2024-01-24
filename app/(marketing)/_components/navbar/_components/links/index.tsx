@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import styles from "../../navbar.module.scss";
 const Links = () => {
   const pathname = usePathname();
 
@@ -16,10 +16,11 @@ const Links = () => {
       {links.map((link, idx) => (
         <Link className="h-full" key={idx} href={link.url}>
           <li
-            className={cn(
-              "text-white text-xl font-[400]",
-              pathname == link.url && "font-bold"
-            )}
+            className={
+              pathname == link.url
+                ? `${styles.navLink} ${styles.navLinkActive} `
+                : styles.navLink
+            }
           >
             {link.title}
           </li>

@@ -1,0 +1,106 @@
+.mainFooter {
+    padding: 120px 0 120px;
+    background: #333333;
+    background-image: url('/images/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 40px;
+
+}
+
+
+.socialmedia {
+
+    button:hover svg path {
+        fill: #000;
+    }
+}
+
+.subscribeBtn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5px;
+    top: calc(50% - 25px);
+    transition: .3s ease all;
+
+    svg {
+        transition: .3s ease all;
+
+    }
+
+    &:hover {
+        svg {
+            transform: translateX(4px);
+        }
+    }
+
+}
+
+
+.footerLinkWrap {}
+
+.footerLinkHeading {
+    color: #FFF;
+    font-family: "Work Sans", sans-serif;
+    font-size: 21.333px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.133px;
+    text-transform: uppercase;
+}
+
+.footerLinks {
+    color: #FFF;
+    font-family: "Work Sans", sans-serif;
+    font-size: 26.667px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.133px;
+    opacity: 0.6;
+    position: relative;
+    transition: .3s ease all;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+.footerLinkActive {
+    opacity: 1;
+    padding-left: 20px;
+
+    &::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50px;
+        display: inline-block;
+        background: #fff;
+        position: absolute;
+        top: calc(50% - 4px);
+        left: 0;
+    }
+}
+
+.heroText {
+    color: #FFF;
+    font-family: "Work Sans", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: -0.256px;
+    max-width: 720px;
+}
