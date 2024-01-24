@@ -31,23 +31,19 @@ import PhoneIcon from "../../_icons/phone";
 import MessageIcon from "../../_icons/message";
 
 const formSchema = z.object({
-  fullName: z
-    .string()
-    .nonempty("Full name is required")
-    .min(2, {
-      message: "Full name must be at least 2 characters.",
-    })
-    .optional(),
+  fullName: z.string().nonempty("Full name is required").min(2, {
+    message: "Full name must be at least 2 characters.",
+  }),
 
   emailAddress: z
     .string()
     .nonempty("Email address is required")
     .email({ message: "Email address be a valid email" }),
 
-  role: z.string({
-    required_error: "Please select an role.",
+  role: z.string().nonempty("Role is required"),
+  phone: z.string().nonempty("Phone is required").min(10, {
+    message: "Phone number must be at least 10 characters.",
   }),
-  phone: z.string().nonempty("Phone is required"),
   message: z.string().min(2, {
     message: "Message must be at least 2 characters.",
   }),
