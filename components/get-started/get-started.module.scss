@@ -7,8 +7,8 @@
 }
 
 .getStatedContainer {
-    margin: 0 auto;
     max-width: var(--container-width);
+    margin: var(--container-gap);
     display: flex;
     align-items: center;
     justify-content: flex-end;

@@ -6,8 +6,8 @@
 
   .whoWeAreWrapper {
 
-    max-width: var(--container-width);
-    margin: 0 auto;
+    max-width: 1256px;
+    margin: var(--container-gap);
   }
 
 }
@@ -90,6 +90,10 @@
     height: 560px;
     border-radius: 40px;
     overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
   }
 }
 
@@ -167,12 +171,16 @@
   top: 0;
   bottom: 0;
   position: absolute;
-  left: 142px;
+  left: 0;
   right: initial;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  // @media (max-width:1440px) {
+  //   left: 4%;
+  // }
 
   .wwrDot {
     -webkit-appearance: none;

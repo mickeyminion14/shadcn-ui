@@ -12,7 +12,9 @@ body {
   background-color: #333333;
 }
 
-
+* {
+  font-family: "Work Sans", sans-serif;
+}
 
 @layer base {
   :root {
@@ -46,7 +48,21 @@ body {
 
     --radius: 0.5rem;
 
-    --container-width: 1536px;
+    --container-width: 1440px;
+    --container-gap: 0 auto;
+    --font: "Work Sans", sans-serif;
+    // --tablet-viewport: 992px;
+    // --tablet-viewport: 767px;
+
+    @media (max-width:1440px) {
+      --container-width: 1366px;
+    }
+
+    @media (max-width:1260px) {
+      --container-gap: 0 20px;
+    }
+
+
   }
 
   .dark {

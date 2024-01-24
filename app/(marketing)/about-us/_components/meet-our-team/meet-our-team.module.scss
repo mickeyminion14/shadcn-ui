@@ -6,7 +6,7 @@
 
     .meetOurTeamWrapper {
         max-width: var(--container-width);
-        margin: 0 auto;
+        margin: var(--container-gap);
     }
 
 }
@@ -77,6 +77,10 @@
         align-items: center;
         // gap: 90px;
         flex-shrink: 0;
+
+        img {
+            object-fit: cover;
+        }
     }
 }
 
@@ -188,42 +192,3 @@
     width: 65%;
     height: 65%;
 }
-
-
-
-
-// .wwrDots {
-//     z-index: 1;
-//     top: 0;
-//     bottom: 0;
-//     position: absolute;
-//     left: 142px;
-//     right: initial;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-
-//     .wwrDot {
-//         -webkit-appearance: none;
-//         background-color: #ccc;
-//         touch-action: manipulation;
-//         display: inline-flex;
-//         text-decoration: none;
-//         cursor: pointer;
-//         border: 0;
-//         padding: 0;
-//         margin: 0;
-//         display: flex;
-//         align-items: center;
-//         height: 120px;
-//         width: 10px;
-//         border-radius: 0px 10px 10px 0px;
-//         background: rgba(255, 255, 255, 0.10);
-
-//         &.wwrDotActive {
-//             border-radius: 0px 10px 10px 0px;
-//             background: #FFF;
-//         }
-//     }
-// }

@@ -9,7 +9,7 @@
 
     .heroSectionWrapper {
         max-width: var(--container-width);
-        margin: 0 auto;
+        margin: var(--container-gap);
         display: flex;
         align-items: center;
         padding: 255px 0;

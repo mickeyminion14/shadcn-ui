@@ -23,7 +23,7 @@ export const Footer = () => {
 
   return (
     <footer className={styles.mainFooter}>
-      <div className="md:max-w-screen-2xl mx-auto  w-full">
+      <div className={styles.mainFooterContainer}>
         <div className="flex justify-between">
           <Logo />
           <div className="w-full max-w-[912px] text-white text-xl font-light">
@@ -37,7 +37,7 @@ export const Footer = () => {
         <div className="mt-24 flex justify-between">
           <div className="text-white">
             <div
-              className={`${styles.socialmedia} flex justify-between gap-x-2 max-w-[200px]`}
+              className={`${styles.socialmedia} flex justify-between  max-w-[200px]`}
             >
               <Button className="h-16 w-16" variant={"primary_outline"}>
                 <div className=" w-6 h-6 relative">
@@ -77,10 +77,8 @@ export const Footer = () => {
             </div>
             <div className="mt-8">Copyright ©2025, All Rights Reserved</div>
           </div>
-          <div
-            className={`${styles.footerLinkWrap} w-full max-w-[912px] flex justify-between`}
-          >
-            <div className=" flex flex-col gap-y-10">
+          <div className={styles.footerLinkWrap}>
+            <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>Main Site Map</div>
               {links.map((link, idx) => (
                 <Link key={idx} href={link.url}>
@@ -96,13 +94,13 @@ export const Footer = () => {
                 </Link>
               ))}
             </div>
-            <div className="flex flex-col gap-y-10">
+            <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>App Features</div>
               <div className={styles.footerLinks}>Lorem Ipsum</div>
               <div className={styles.footerLinks}>Lorem Ipsum</div>
               <div className={styles.footerLinks}>Lorem Ipsum</div>
             </div>
-            <div className="flex flex-col gap-y-10">
+            <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>Legal</div>
               <div className={styles.footerLinks}>Privacy Policy</div>
               <div className={styles.footerLinks}>Terms & Conditions</div>
