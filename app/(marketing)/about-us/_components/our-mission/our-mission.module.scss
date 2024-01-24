@@ -246,6 +246,10 @@
 
 
 @media (max-width:767px) {
+    .embla {
+        padding: 0 40px;
+    }
+
     .ourMission {
         padding-bottom: 60px;
 
@@ -267,6 +271,8 @@
     }
 
     .sliderWrapper {
+        // padding: 0 20px;
+
         .infoBlk {
 
             .button {

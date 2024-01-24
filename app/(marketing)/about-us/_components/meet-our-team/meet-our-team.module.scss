@@ -196,8 +196,14 @@
 
 
 @media (max-width: 767px) {
+    .embla {
+        --slide-spacing: 45px;
+        --slide-size: 100%;
+        --slide-height: 640px;
+    }
+
     .meetOurTeam {
-        padding: 96px 0;
+        padding: 96px 0 200px;
     }
 
     .meetOurTeamTitle {
@@ -211,10 +217,35 @@
     }
 
     .sliderWrapper {
-
         .infoImage {
             order: 1;
-            // height: 300px;
+        }
+
+        .infoBlk {
+            .button {
+                margin-bottom: 16px;
+            }
+
+            .title {
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            .description {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .embla__buttons {
+        width: 100%;
+        max-width: 283px;
+        gap: 8px;
+        top: 650px;
+        right: calc(50% - 145px);
+
+        .embla__button {
+            flex: 1
         }
     }
 
