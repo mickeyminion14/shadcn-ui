@@ -182,3 +182,49 @@
         }
     }
 }
+
+
+@media (max-width: 1440px) {
+
+    .contactFormContainer {
+        padding: 0 20px;
+
+        .title {
+            font-size: 60px;
+        }
+
+        .description {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .contactFormContainer {
+        padding: 0 20px;
+
+        .title {
+            font-size: 36px;
+        }
+
+        .description {
+            margin-top: 16px;
+        }
+    }
+
+    .formWrapper {
+        margin-top: 48px;
+
+        .formGroup {
+            flex-direction: column;
+        }
+
+        .formAgreement {
+            padding-top: 0;
+            max-width: 100%;
+            padding-left: 10px;
+        }
+    }
+
+}

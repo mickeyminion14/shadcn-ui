@@ -192,3 +192,30 @@
     width: 65%;
     height: 65%;
 }
+
+
+
+@media (max-width: 767px) {
+    .meetOurTeam {
+        padding: 96px 0;
+    }
+
+    .meetOurTeamTitle {
+        font-size: 36px;
+        line-height: 44px;
+        margin-bottom: 32px;
+    }
+
+    .embla {
+        --slide-height: 900px
+    }
+
+    .sliderWrapper {
+
+        .infoImage {
+            order: 1;
+            // height: 300px;
+        }
+    }
+
+}

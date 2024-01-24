@@ -72,6 +72,12 @@ const OurMission = () => {
   return (
     <>
       <section className={styles.ourMission}>
+        <Image
+          className={styles.ourMissionBannerImage}
+          src={"/images/about/2-about_banner.jpg"}
+          alt="hero background image"
+          fill
+        />
         <div className={styles.ourMissionWrapper}>
           <div className={styles.ourMissionSlider}>
             <div className={styles.embla}>
