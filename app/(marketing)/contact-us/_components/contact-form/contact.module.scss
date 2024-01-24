@@ -60,9 +60,9 @@
             left: 12px;
 
 
-            &+input,
-            textarea,
-            button[role="combobox"] {
+            &~input,
+            &~textarea,
+            &~button[role="combobox"] {
                 padding-left: 46px;
             }
         }

@@ -131,6 +131,7 @@ const ContactForm = () => {
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
                       <FormLabel>Role *</FormLabel>
+                      <RoleIcon />
                       <Select
                         onValueChange={field.onChange}
                         defaultValue={field.value}
