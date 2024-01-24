@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import { textFont } from "@/lib/fonts";
 import { siteConfig } from "@/config/site";
+import MainLoader from "@/components/loader";
 
 //basic meta data
 

@@ -1,4 +1,4 @@
-import GetStarted from "../_components/get-started";
+import GetStarted from "../../../components/get-started";
 import ContactForm from "./_components/contact-form";
 import HeroSection from "./_components/hero-section";
 // import LocationMap from "./_components/location-map";

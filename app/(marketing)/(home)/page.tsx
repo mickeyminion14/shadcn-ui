@@ -6,7 +6,7 @@ import Image from "next/image";
 import ScrollAnimation from "../_components/scroll-animation";
 import VideoSection from "./_components/video";
 import AppMainFeature from "./_components/app-feature";
-import GetStarted from "../_components/get-started";
+import GetStarted from "../../../components/get-started";
 // import LocomotiveScroll from "locomotive-scroll";
 export function generateMetadata(): Metadata {
   return {
