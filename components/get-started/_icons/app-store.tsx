@@ -11,8 +11,8 @@ const AppStoreIcon = () => {
       viewBox="0 0 28.2 25.1"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         fill="#FFFFFF"
         d="M18.2,2c-0.1-0.5-0.5-0.9-0.9-1.2c-1-0.6-2.2-0.3-2.7,0.7L14.3,2L14,1.5c-0.5-1-1.8-1.3-2.7-0.7
 	c-1,0.5-1.3,1.7-0.8,2.7L11.9,6l-5.3,9.4H2.7c-1.1,0-2,0.9-2,2s0.9,2,2,2h15l-2.3-4h-4.3L18,3.5C18.3,3,18.3,2.5,18.2,2z M25.7,15.4

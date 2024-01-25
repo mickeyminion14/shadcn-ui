@@ -29,7 +29,11 @@ import UserIcon from "../../_icons/user";
 import RoleIcon from "../../_icons/role";
 import PhoneIcon from "../../_icons/phone";
 import MessageIcon from "../../_icons/message";
-// import httpService from "../../../../_utils/http.service";
+import HttpService from "../../../../_utils/http.service";
+import { useEffect, useState } from "react";
+import { phoneRegex } from "@/lib/constants";
+
+export const http = new HttpService();
 
 const formSchema = z.object({
   fullName: z.string().nonempty("Full name is required").min(2, {
@@ -42,16 +46,22 @@ const formSchema = z.object({
     .email({ message: "Email address be a valid email" }),
 
   role: z.string().nonempty("Role is required"),
-  phone: z.string().nonempty("Phone is required").min(10, {
-    message: "Phone number must be at least 10 characters.",
-  }),
+  phone: z
+    .string({
+      required_error: "Phone is required",
+    })
+    .min(10, {
+      message: "Phone number must be at least 10 characters.",
+    })
+    .regex(phoneRegex, "Please enter valid mobile number"),
   message: z.string().min(2, {
     message: "Message must be at least 2 characters.",
   }),
-  agree: z.boolean().default(false).optional(),
+  agree: z.boolean({ required_error: "Phone is required" }).default(false),
 });
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
   const roles = [
     { value: "PLAYER", viewValue: "Player" },
     { value: "COACH", viewValue: "Coach" },
@@ -74,29 +84,24 @@ const ContactForm = () => {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    console.log("payload", values);
+    // createPost(values);
   }
 
-  const createPost = async () => {
+  const createPost = async (payload: z.infer<typeof formSchema>) => {
     try {
-      const postData = {
-        fullName: "John kim",
-        email: "johnkim@yopmail.com",
-        role: "PLAYER",
-        mobileNumber: "34523452345",
-        message: "Hellow world this is test message",
-      };
+      setLoading(true);
 
-      // const response = await httpService.post("contact-us", postData);
-      // console.log("Created post:", response);
+      console.log("payload", payload);
+      const response = await http.post("contact-us", payload);
+      console.log("Created post:", response);
     } catch (error) {
       console.error("Error creating post:", error);
+    } finally {
+      setLoading(false);
+      form.reset();
     }
   };
-
-  // createPost();
 
   return (
     <section id="contactform" className={styles.contactForm}>
@@ -220,7 +225,7 @@ const ContactForm = () => {
                           onCheckedChange={field.onChange}
                         />
                       </FormControl>
-                      <FormLabel>I Agree to Terms& Conditions</FormLabel>
+                      <FormLabel>I Agree to Terms & Conditions</FormLabel>
                     </FormItem>
                   )}
                 />
