@@ -57,7 +57,9 @@ const formSchema = z.object({
   message: z.string().min(2, {
     message: "Message must be at least 2 characters.",
   }),
-  agree: z.boolean({ required_error: "Phone is required" }).default(false),
+  agree: z.literal<boolean>(true, {
+    errorMap: () => ({ message: "Please check the agreement" }),
+  }),
 });
 
 const ContactForm = () => {
@@ -78,7 +80,7 @@ const ContactForm = () => {
       role: "",
       phone: "",
       message: "",
-      agree: false,
+      agree: true,
     },
   });
 
@@ -225,7 +227,8 @@ const ContactForm = () => {
                           onCheckedChange={field.onChange}
                         />
                       </FormControl>
-                      <FormLabel>I Agree to Terms & Conditions</FormLabel>
+                      <FormLabel>I Agree to Terms & Conditions</FormLabel>\
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
