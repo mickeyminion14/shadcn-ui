@@ -110,7 +110,7 @@
         }
 
         &+.featureBlock {
-            margin-top: 0;
+            margin-top: 96px;
         }
 
         div[class*="featureBlockTitle"] {
@@ -119,6 +119,10 @@
 
         div[class*="featureBlockDescription"] {
             font-size: 18px;
+
+            &+div[class*="mt-12"] {
+                margin-top: 32px;
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ const AppMainFeature = () => {
       <div className={styles.featureWrapperContainer}>
         <div className={styles.featureTitle}>WELCOME TO MAXXX</div>
         <div className={styles.featureBlock}>
-          <div className="featureTextBlock flex flex-col py-[70px] max-w-[400px]">
+          <div className="featureTextBlock flex flex-col max-w-[400px]">
             <div className="featureBlockTitle text-white font-bold text-5xl text-left">
               A powerful coach & athlete interface
             </div>
@@ -77,7 +77,7 @@ const AppMainFeature = () => {
           <div className="featureImageBlock max-w-[100%] max-h-[100%] h-[620px] w-[566px] relative">
             <Image src={"/images/frame2.png"} alt="frame2" fill />
           </div>
-          <div className="featureTextBlock flex flex-col py-[70px] max-w-[400px]">
+          <div className="featureTextBlock flex flex-col max-w-[400px]">
             <div className="featureBlockTitle text-white font-bold text-5xl text-left">
               Geared toward mental fitness to reach max potential
             </div>
@@ -99,7 +99,7 @@ const AppMainFeature = () => {
         </div>
 
         <div className={styles.featureBlock}>
-          <div className="featureTextBlock flex flex-col py-[70px] max-w-[400px]">
+          <div className="featureTextBlock flex flex-col  max-w-[400px]">
             <div className="featureBlockTitle text-white font-bold text-5xl text-left">
               Combines mental and physical training
             </div>
