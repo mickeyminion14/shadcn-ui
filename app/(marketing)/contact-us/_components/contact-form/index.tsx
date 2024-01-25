@@ -32,7 +32,7 @@ import HttpService from "../../../../_utils/http.service";
 import { useState } from "react";
 import { phoneRegex } from "@/lib/constants";
 import ButtonLoaderIcon from "@/components/buttonLoader/buttonLoader";
-
+import { toast } from "@/components/ui/use-toast";
 export const http = new HttpService();
 
 const formSchema = z.object({
@@ -91,12 +91,21 @@ const ContactForm = () => {
       setLoading(true);
       console.log("payload", payload);
       const response = await http.post("contact-us", payload);
+      toast({
+        variant: "success",
+        title:
+          "Your query has been submitted. Our consultant you contact you soon.",
+      });
       console.log("Created post:", response);
+      form.reset();
     } catch (error) {
+      toast({
+        variant: "error",
+        title: "Something went wrong. Please try again",
+      });
       console.error("Error creating post:", error);
     } finally {
       setLoading(false);
-      form.reset();
     }
   };
 

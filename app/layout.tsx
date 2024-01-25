@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 // import { textFont } from "@/lib/fonts";
 import { siteConfig } from "@/config/site";
+import { Toaster } from "@/components/ui/toaster";
 
 //basic meta data
 
@@ -81,6 +82,7 @@ export default function RootLayout({
         // className={textFont.className}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
