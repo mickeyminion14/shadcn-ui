@@ -3,9 +3,9 @@ import axios, { AxiosResponse } from "axios";
 class HttpService {
   private readonly baseURL: string;
 
-  constructor(baseURL: string) {
+  constructor() {
     // Set the base URL for the requests
-    this.baseURL = baseURL;
+    this.baseURL = "https://isportdevapi.appskeeper.in/v1/admin/";
   }
 
   // Method for making GET requests
@@ -61,4 +61,4 @@ class HttpService {
   }
 }
 
-export default HttpService;
+export const httpService = new HttpService();

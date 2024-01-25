@@ -29,6 +29,7 @@ import UserIcon from "../../_icons/user";
 import RoleIcon from "../../_icons/role";
 import PhoneIcon from "../../_icons/phone";
 import MessageIcon from "../../_icons/message";
+// import httpService from "../../../../_utils/http.service";
 
 const formSchema = z.object({
   fullName: z.string().nonempty("Full name is required").min(2, {
@@ -77,6 +78,25 @@ const ContactForm = () => {
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
+
+  const createPost = async () => {
+    try {
+      const postData = {
+        fullName: "John kim",
+        email: "johnkim@yopmail.com",
+        role: "PLAYER",
+        mobileNumber: "34523452345",
+        message: "Hellow world this is test message",
+      };
+
+      // const response = await httpService.post("contact-us", postData);
+      // console.log("Created post:", response);
+    } catch (error) {
+      console.error("Error creating post:", error);
+    }
+  };
+
+  // createPost();
 
   return (
     <section id="contactform" className={styles.contactForm}>
