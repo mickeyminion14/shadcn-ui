@@ -8,6 +8,7 @@ import InstagramIcon from "./icons/instagram";
 import YoutubeIcon from "./icons/youtube";
 import ArrowRight from "./icons/arrow-right";
 import FooterLinks from "./links";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -17,8 +18,7 @@ export const Footer = () => {
           <Logo />
           <div className="w-full max-w-[860px] text-white text-xl font-light">
             <div className={styles.heroText}>
-              Sandow provides personalized fitness & diet solutions through the
-              power of AI.
+              TRANSFORM YOUR MIND AND ELEVATE YOUR GAME
             </div>
             {/* <div className="pt-24">links</div> */}
           </div>
@@ -73,15 +73,26 @@ export const Footer = () => {
             </div>
             <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>App Features</div>
-              <div className={styles.footerLinks}>Lorem Ipsum</div>
-              <div className={styles.footerLinks}>Lorem Ipsum</div>
-              <div className={styles.footerLinks}>Lorem Ipsum</div>
+              <div className={styles.footerLinks}>Player Motivations</div>
+              <div className={styles.footerLinks}>Parent Assist</div>
+              <div className={styles.footerLinks}>Recruiter Mode</div>
             </div>
             <div className={styles.footerLinkWrapInr}>
-              <div className={styles.footerLinkHeading}>Legal</div>
-              <div className={styles.footerLinks}>Privacy Policy</div>
-              <div className={styles.footerLinks}>Terms & Conditions</div>
-              <div className={styles.footerLinks}>Cookie Policy</div>
+              <Link href={"/legal"} className={styles.footerLinkHeading}>
+                Legal
+              </Link>
+              <Link href={"/privacy-policy"} className={styles.footerLinks}>
+                Privacy Policy
+              </Link>
+              <Link
+                href={"/terms-and-conditions"}
+                className={styles.footerLinks}
+              >
+                Terms & Conditions
+              </Link>
+              <Link href={"/cookie-policy"} className={styles.footerLinks}>
+                Cookie Policy
+              </Link>
             </div>
           </div>
         </div>
