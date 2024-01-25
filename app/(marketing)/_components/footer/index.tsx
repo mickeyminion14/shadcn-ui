@@ -1,26 +1,15 @@
-"use client";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail } from "lucide-react";
-import Image from "next/image";
 import styles from "./footer.module.scss";
 import FacebookIcon from "./icons/facebook";
 import InstagramIcon from "./icons/instagram";
 import YoutubeIcon from "./icons/youtube";
 import ArrowRight from "./icons/arrow-right";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import FooterLinks from "./links";
 
 export const Footer = () => {
-  const pathname = usePathname();
-
-  const links: { title: string; url: string }[] = [
-    { title: "Home", url: "/" },
-    { title: "About", url: "/about-us" },
-    { title: "Checkout", url: "/checkout" },
-  ];
-
   return (
     <footer className={styles.mainFooter}>
       <div className={styles.mainFooterContainer}>
@@ -80,19 +69,7 @@ export const Footer = () => {
           <div className={styles.footerLinkWrap}>
             <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>Main Site Map</div>
-              {links.map((link, idx) => (
-                <Link key={idx} href={link.url}>
-                  <div
-                    className={
-                      pathname == link.url
-                        ? `${styles.footerLinks} ${styles.footerLinkActive} `
-                        : styles.footerLinks
-                    }
-                  >
-                    {link.title}
-                  </div>
-                </Link>
-              ))}
+              <FooterLinks />
             </div>
             <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>App Features</div>
