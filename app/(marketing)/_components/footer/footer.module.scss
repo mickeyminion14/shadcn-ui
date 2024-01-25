@@ -9,6 +9,10 @@
 
 }
 
+.mainFooterContainer {
+    max-width: var(--container-width);
+    margin: var(--container-gap);
+}
 
 .socialmedia {
 
@@ -42,12 +46,24 @@
 }
 
 
-.footerLinkWrap {}
+.footerLinkWrap {
+    display: flex;
+    max-width: 912px;
+    flex: 1;
+    justify-content: space-between;
+    padding-left: 50px;
+}
+
+.footerLinkWrapInr {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
 .footerLinkHeading {
     color: #FFF;
     font-family: "Work Sans", sans-serif;
-    font-size: 21.333px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -58,7 +74,7 @@
 .footerLinks {
     color: #FFF;
     font-family: "Work Sans", sans-serif;
-    font-size: 26.667px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -97,10 +113,68 @@
 .heroText {
     color: #FFF;
     font-family: "Work Sans", sans-serif;
-    font-size: 32px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 400;
     line-height: 160%;
     letter-spacing: -0.256px;
-    max-width: 720px;
+    max-width: 600px;
+}
+
+
+@media (max-width:1220px) {
+    .mainFooterContainer {
+        &>div[class*="justify-between"] {
+            flex-direction: column;
+
+            &+div[class*="justify-between"] {
+                margin-top: 20px;
+            }
+
+            div[class*="heroText"] {
+                margin-top: 20px;
+            }
+
+            div[class*="socialmedia"] {
+                margin-top: 1rem;
+
+                &+div[class*="mt-16"] {
+                    margin-top: 20px;
+                }
+
+                &~div[class*="mt-8"] {
+                    display: none;
+                }
+            }
+
+        }
+
+    }
+
+    .footerLinkWrap {
+        margin-top: 40px;
+        padding-left: 0;
+    }
+}
+
+@media (max-width:767px) {
+    .footerLinkWrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footerLinkWrapInr {
+        gap: 16px;
+
+        &+.footerLinkWrapInr {
+            margin-top: 48px;
+
+        }
+    }
+
+    // .footerLinks {
+    //     font-size: 20px;
+    // }
+
 }

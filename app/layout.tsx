@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import { textFont } from "@/lib/fonts";
+// import { textFont } from "@/lib/fonts";
 import { siteConfig } from "@/config/site";
 
 //basic meta data
@@ -78,7 +78,7 @@ export default function RootLayout({
           backgroundPosition: "center",
           backgroundSize: "100%",
         }}
-        className={textFont.className}
+        // className={textFont.className}
       >
         {children}
       </body>

@@ -6,7 +6,7 @@
 
     .meetOurTeamWrapper {
         max-width: var(--container-width);
-        margin: 0 auto;
+        margin: var(--container-gap);
     }
 
 }
@@ -77,6 +77,10 @@
         align-items: center;
         // gap: 90px;
         flex-shrink: 0;
+
+        img {
+            object-fit: cover;
+        }
     }
 }
 
@@ -191,39 +195,58 @@
 
 
 
+@media (max-width: 767px) {
+    .embla {
+        --slide-spacing: 45px;
+        --slide-size: 100%;
+        --slide-height: 640px;
+    }
 
-// .wwrDots {
-//     z-index: 1;
-//     top: 0;
-//     bottom: 0;
-//     position: absolute;
-//     left: 142px;
-//     right: initial;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
+    .meetOurTeam {
+        padding: 96px 0 200px;
+    }
 
-//     .wwrDot {
-//         -webkit-appearance: none;
-//         background-color: #ccc;
-//         touch-action: manipulation;
-//         display: inline-flex;
-//         text-decoration: none;
-//         cursor: pointer;
-//         border: 0;
-//         padding: 0;
-//         margin: 0;
-//         display: flex;
-//         align-items: center;
-//         height: 120px;
-//         width: 10px;
-//         border-radius: 0px 10px 10px 0px;
-//         background: rgba(255, 255, 255, 0.10);
+    .meetOurTeamTitle {
+        font-size: 36px;
+        line-height: 44px;
+        margin-bottom: 32px;
+    }
 
-//         &.wwrDotActive {
-//             border-radius: 0px 10px 10px 0px;
-//             background: #FFF;
-//         }
-//     }
-// }
+    .embla {
+        --slide-height: 900px
+    }
+
+    .sliderWrapper {
+        .infoImage {
+            order: 1;
+        }
+
+        .infoBlk {
+            .button {
+                margin-bottom: 16px;
+            }
+
+            .title {
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            .description {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .embla__buttons {
+        width: 100%;
+        max-width: 283px;
+        gap: 8px;
+        top: 650px;
+        right: calc(50% - 145px);
+
+        .embla__button {
+            flex: 1
+        }
+    }
+
+}

@@ -12,30 +12,38 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import styles from "./contact.module.scss";
 import ArrowRight from "../../_icons/arrow-right";
+import EmailIcon from "../../_icons/email";
+import UserIcon from "../../_icons/user";
+import RoleIcon from "../../_icons/role";
+import PhoneIcon from "../../_icons/phone";
+import MessageIcon from "../../_icons/message";
 
 const formSchema = z.object({
-  fullName: z
-    .string()
-    .nonempty("Full name is required")
-    .min(2, {
-      message: "Full name must be at least 2 characters.",
-    })
-    .optional(),
+  fullName: z.string().nonempty("Full name is required").min(2, {
+    message: "Full name must be at least 2 characters.",
+  }),
 
   emailAddress: z
     .string()
     .nonempty("Email address is required")
     .email({ message: "Email address be a valid email" }),
 
-  role: z.string({
-    required_error: "Please select an role.",
+  role: z.string().nonempty("Role is required"),
+  phone: z.string().nonempty("Phone is required").min(10, {
+    message: "Phone number must be at least 10 characters.",
   }),
-  phone: z.string().nonempty("Phone is required"),
   message: z.string().min(2, {
     message: "Message must be at least 2 characters.",
   }),
@@ -43,6 +51,13 @@ const formSchema = z.object({
 });
 
 const ContactForm = () => {
+  const roles = [
+    { value: "PLAYER", viewValue: "Player" },
+    { value: "COACH", viewValue: "Coach" },
+    { value: "GUARDIAN", viewValue: "Guardian" },
+    { value: "INSTITUTE", viewValue: "Institute" },
+    { value: "RECRUITER", viewValue: "Recruiter" },
+  ];
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -81,6 +96,7 @@ const ContactForm = () => {
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
                       <FormLabel>Full Name</FormLabel>
+                      <UserIcon />
                       <FormControl>
                         <Input placeholder="Enter full name" {...field} />
                       </FormControl>
@@ -94,6 +110,7 @@ const ContactForm = () => {
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
                       <FormLabel>Email Address</FormLabel>
+                      <EmailIcon />
                       <FormControl>
                         <Input placeholder="Enter your email" {...field} />
                       </FormControl>
@@ -110,9 +127,26 @@ const ContactForm = () => {
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
                       <FormLabel>Role *</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Select Role" {...field} />
-                      </FormControl>
+                      <RoleIcon />
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select Role" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {roles.map((role) => {
+                            return (
+                              <SelectItem key={role.value} value={role.value}>
+                                {role.viewValue}
+                              </SelectItem>
+                            );
+                          })}
+                        </SelectContent>
+                      </Select>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -124,6 +158,7 @@ const ContactForm = () => {
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
                       <FormLabel>Phone Number</FormLabel>
+                      <PhoneIcon />
                       <FormControl>
                         <Input
                           placeholder="Enter your phone number"
@@ -141,6 +176,7 @@ const ContactForm = () => {
                 render={({ field }) => (
                   <FormItem className={styles.formField}>
                     <FormLabel>Main Message</FormLabel>
+                    <MessageIcon />
                     <FormControl>
                       <Textarea
                         placeholder="Hey. I would like to report a bug, Thanks"

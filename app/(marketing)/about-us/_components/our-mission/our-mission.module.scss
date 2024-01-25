@@ -5,14 +5,15 @@
     overflow: hidden;
     border-radius: 60px;
     background: #111214;
-    background-image: url('/images/about/2-about_banner.jpg');
+    // background-image: url('/images/about/2-about_banner.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
 
     .ourMissionWrapper {
         max-width: var(--container-width);
-        margin: 0 auto;
+        margin: var(--container-gap);
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -23,6 +24,9 @@
     }
 }
 
+.ourMissionBannerImage {
+    object-fit: cover;
+}
 
 .sliderWrapper {
     display: flex;
@@ -79,6 +83,10 @@
         height: 560px;
         border-radius: 40px;
         overflow: hidden;
+
+        img {
+            object-fit: cover;
+        }
     }
 }
 
@@ -235,3 +243,57 @@
         }
     }
 }
+
+
+@media (max-width:767px) {
+    .embla {
+        padding: 0 40px;
+    }
+
+    .ourMission {
+        padding-bottom: 60px;
+
+        .ourMissionWrapper {
+            justify-content: center;
+            margin-top: 200px;
+        }
+
+        .ourMissionSlider {
+            padding: 0 20px;
+        }
+    }
+
+    .ourMissionBannerImage {
+        object-fit: cover;
+        width: 100% !important;
+        height: 350px !important;
+
+    }
+
+    .sliderWrapper {
+        // padding: 0 20px;
+
+        .infoBlk {
+
+            .button {
+                margin-bottom: 16px;
+            }
+
+            .title {
+                font-size: 24px;
+                line-height: 32px;
+
+            }
+
+            .description {
+                font-size: 18px;
+            }
+
+
+        }
+
+    }
+}
+
+
+@media (max-width:767px) {}

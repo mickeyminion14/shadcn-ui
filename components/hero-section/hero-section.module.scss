@@ -1,18 +1,24 @@
 .heroSection {
     background: linear-gradient(90deg, #000 52.65%, rgba(0, 0, 0, 0) 100%);
-    background-image: url('/images/contact-us_banner.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
+
+    &>img {
+        object-fit: cover;
+    }
+
+    .heroSectionImage {}
 
     .heroSectionWrapper {
-
         max-width: var(--container-width);
-        margin: 0 auto;
+        margin: var(--container-gap);
         display: flex;
         align-items: center;
         padding: 255px 0;
-
+        z-index: 1;
+        position: relative;
     }
 }
 
@@ -72,6 +78,49 @@
             to {
                 transform: translateY(4px);
             }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .heroContentWrap {
+        .title {
+            font-size: 60px;
+        }
+
+        .description {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .heroSection {
+        overflow: hidden;
+
+        &>img {
+            left: -30%;
+        }
+
+        .heroSectionWrapper {
+            padding-top: 500px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .heroContentWrap {
+        text-align: center;
+
+        .title {
+            font-size: 36px;
+        }
+
+        .description {
+            margin-top: 16px;
+        }
+
+        .button {
+            margin-top: 16px;
         }
     }
 }

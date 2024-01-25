@@ -7,8 +7,8 @@
 }
 
 .getStatedContainer {
-    margin: 0 auto;
     max-width: var(--container-width);
+    margin: var(--container-gap);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -75,5 +75,74 @@
             }
         }
 
+    }
+}
+
+@media (max-width:992px) {
+    .getStatedWrapper {
+        max-width: calc(100% - 32px);
+        margin: 0 auto;
+        padding: 64px 0;
+    }
+
+    .getStatedContentWrapper {
+        width: 100%;
+    }
+
+    .getStatedContainer {
+        justify-content: center;
+        height: initial;
+        margin-bottom: 300px;
+    }
+
+    .getStatedInfoBlock {
+        max-width: 100%;
+
+        .playButton {
+            justify-content: flex-start;
+        }
+    }
+
+    .getStatedBannerImage {
+        left: 0;
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width:767px) {
+    .getStatedInfoBlock {
+
+        .title {
+            font-size: 36px;
+        }
+
+        .description {
+            font-size: 18px;
+            margin-top: 16px;
+        }
+
+        .playButton {
+            gap: 32px;
+            margin-top: 32px;
+        }
+    }
+}
+
+
+@media (max-width:540px) {
+    .getStatedInfoBlock {
+
+        .playButton {
+            gap: 32px;
+            margin-top: 32px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .getStatedBannerImage {
+        background-size: 140% !important;
     }
 }
