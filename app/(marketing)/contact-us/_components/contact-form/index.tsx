@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -30,26 +29,23 @@ import RoleIcon from "../../_icons/role";
 import PhoneIcon from "../../_icons/phone";
 import MessageIcon from "../../_icons/message";
 import HttpService from "../../../../_utils/http.service";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { phoneRegex } from "@/lib/constants";
+import ButtonLoaderIcon from "@/components/buttonLoader/buttonLoader";
 
 export const http = new HttpService();
 
 const formSchema = z.object({
-  fullName: z.string().nonempty("Full name is required").min(2, {
+  fullName: z.string({ required_error: "Full name is required" }).min(2, {
     message: "Full name must be at least 2 characters.",
   }),
-
   emailAddress: z
-    .string()
-    .nonempty("Email address is required")
+    .string({ required_error: "Email address is required" })
     .email({ message: "Email address be a valid email" }),
 
   role: z.string().nonempty("Role is required"),
   phone: z
-    .string({
-      required_error: "Phone is required",
-    })
+    .string({ required_error: "Phone is required" })
     .min(10, {
       message: "Phone number must be at least 10 characters.",
     })
@@ -87,13 +83,12 @@ const ContactForm = () => {
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log("payload", values);
-    // createPost(values);
+    createPost(values);
   }
 
   const createPost = async (payload: z.infer<typeof formSchema>) => {
     try {
       setLoading(true);
-
       console.log("payload", payload);
       const response = await http.post("contact-us", payload);
       console.log("Created post:", response);
@@ -239,9 +234,10 @@ const ContactForm = () => {
                   type="submit"
                   variant={"primary_outline"}
                   className={styles.buttonAction}
+                  disabled={loading}
                 >
                   Submit Form
-                  <ArrowRight />
+                  {loading ? <ButtonLoaderIcon /> : <ArrowRight />}
                 </Button>
               </div>
             </form>
