@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 // import { textFont } from "@/lib/fonts";
 import { siteConfig } from "@/config/site";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/sonner";
 
 //basic meta data
 

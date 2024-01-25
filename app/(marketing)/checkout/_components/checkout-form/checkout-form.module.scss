@@ -1,0 +1,230 @@
+.contactForm {
+    padding: 100px 0;
+}
+
+.contactFormContainer {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contactFormContainer {
+    .title {
+        color: #fff;
+        text-align: center;
+        font-family: "Work Sans", sans-serif;
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: -1.44px;
+    }
+
+    .description {
+        color: #D7D8D9;
+        text-align: center;
+        font-family: "Work Sans", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        margin-top: 24px;
+    }
+}
+
+.formWrapper {
+    margin-top: 96px;
+
+    .formGroup {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .formField {
+        width: 100%;
+        position: relative;
+
+        label {
+            color: #fff;
+            font-family: "Work Sans", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: -0.028px;
+        }
+
+        label+svg {
+            position: absolute;
+            top: 40px;
+            left: 12px;
+
+
+            &~input,
+            &~textarea,
+            &~button[role="combobox"] {
+                padding-left: 46px;
+            }
+        }
+
+
+        input,
+        textarea,
+        button[role="combobox"] {
+            border-radius: 15px;
+            color: #ffffff;
+            background: #2D3035;
+            border-color: #2D3035;
+            border-width: 0;
+            font-family: "Work Sans", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.048px;
+            padding: 16px;
+            min-height: 56px;
+            transition: .3s ease all;
+            outline: none;
+
+            &:focus {
+                border-color: #2D3035;
+                background-color: #333333;
+            }
+
+            &:focus-visible {
+                box-shadow: none;
+            }
+
+            &::placeholder {
+                color: #D7D8D9
+            }
+        }
+
+        textarea {
+            min-height: 170px;
+        }
+
+        p {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            margin-top: 2px !important;
+
+        }
+
+    }
+
+    .formAgreement {
+        max-width: 270px;
+        margin: 0 auto;
+        padding: 46px 0 0;
+
+        label {
+            color: #D7D8D9;
+            font-family: "Work Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.048px;
+            position: relative;
+            top: -5px;
+            left: 25px;
+        }
+
+
+
+        button[role="checkbox"] {
+            transform: scale(2);
+            border: 1px solid #FFF;
+
+        }
+    }
+}
+
+.formButtonGroup {
+    display: flex;
+    justify-content: center;
+    margin-top: 46px !important;
+}
+
+.buttonAction {
+    width: 238px;
+    height: 64px;
+
+    svg {
+        margin-left: 16px;
+        transition: transform 0.3s ease-out;
+        animation: none;
+
+        path {
+            stroke: #fff;
+        }
+    }
+
+    &:hover svg {
+        animation: hoverAnimation 1s infinite alternate;
+
+        path {
+            stroke: #000;
+        }
+    }
+
+    @keyframes hoverAnimation {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(4px);
+        }
+    }
+}
+
+
+@media (max-width: 1440px) {
+
+    .contactFormContainer {
+        padding: 0 20px;
+
+        .title {
+            font-size: 60px;
+        }
+
+        .description {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .contactFormContainer {
+        padding: 0 20px;
+
+        .title {
+            font-size: 36px;
+        }
+
+        .description {
+            margin-top: 16px;
+        }
+    }
+
+    .formWrapper {
+        margin-top: 48px;
+
+        .formGroup {
+            flex-direction: column;
+        }
+
+        .formAgreement {
+            padding-top: 0;
+            max-width: 100%;
+            padding-left: 10px;
+        }
+    }
+
+}
