@@ -90,6 +90,7 @@
     .featureTitle {
         font-size: 36px;
         margin-bottom: 48px;
+        line-height: normal;
     }
 
     .featureBlock {
@@ -102,6 +103,10 @@
                 flex: 1;
             }
 
+        }
+
+        div[class*="featureTextBlock"] {
+            padding-top: 24px;
         }
 
         &+.featureBlock {
