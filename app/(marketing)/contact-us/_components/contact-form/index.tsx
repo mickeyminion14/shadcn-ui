@@ -35,16 +35,17 @@ import ButtonLoaderIcon from "@/components/buttonLoader/buttonLoader";
 import { toast } from "@/components/ui/use-toast";
 export const http = new HttpService();
 
+// Design contact us form schema
 const formSchema = z.object({
   fullName: z.string({ required_error: "Full name is required" }).min(2, {
     message: "Full name must be at least 2 characters.",
   }),
-  emailAddress: z
+  email: z
     .string({ required_error: "Email address is required" })
     .email({ message: "Email address be a valid email" }),
 
   role: z.string().nonempty("Role is required"),
-  phone: z
+  mobileNumber: z
     .string({ required_error: "Phone is required" })
     .min(10, {
       message: "Phone number must be at least 10 characters.",
@@ -53,9 +54,10 @@ const formSchema = z.object({
   message: z.string().min(2, {
     message: "Message must be at least 2 characters.",
   }),
-  agree: z.literal<boolean>(true, {
-    errorMap: () => ({ message: "Please check the agreement" }),
-  }),
+  agree: z.boolean().default(true).optional(),
+  // agree: z.literal<boolean>(true, {
+  //   errorMap: () => ({ message: "Please check the agreement" }),
+  // }),
 });
 
 const ContactForm = () => {
@@ -67,36 +69,34 @@ const ContactForm = () => {
     { value: "INSTITUTE", viewValue: "Institute" },
     { value: "RECRUITER", viewValue: "Recruiter" },
   ];
-  // 1. Define your form.
+  // Defined contact us form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
-      emailAddress: "",
+      email: "",
       role: "",
-      phone: "",
+      mobileNumber: "",
       message: "",
       agree: true,
     },
   });
 
-  // 2. Define a submit handler.
+  // Defined a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("payload", values);
     createPost(values);
   }
 
-  const createPost = async (payload: z.infer<typeof formSchema>) => {
+  const createPost = async (payloadData: z.infer<typeof formSchema>) => {
     try {
       setLoading(true);
-      console.log("payload", payload);
-      const response = await http.post("contact-us", payload);
+      delete payloadData.agree;
+      const response = await http.post("contact-us", payloadData);
       toast({
         variant: "success",
         title:
           "Your query has been submitted. Our consultant you contact you soon.",
       });
-      console.log("Created post:", response);
       form.reset();
     } catch (error) {
       toast({
@@ -137,7 +137,7 @@ const ContactForm = () => {
                 />
                 <FormField
                   control={form.control}
-                  name="emailAddress"
+                  name="email"
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
                       <FormLabel>Email Address</FormLabel>
@@ -185,7 +185,7 @@ const ContactForm = () => {
 
                 <FormField
                   control={form.control}
-                  name="phone"
+                  name="mobileNumber"
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
                       <FormLabel>Phone Number</FormLabel>
