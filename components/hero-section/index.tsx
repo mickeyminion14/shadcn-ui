@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import styles from "./hero-section.module.scss";
 import { Button } from "@/components/ui/button";
