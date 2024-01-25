@@ -26,7 +26,7 @@ export const Footer = () => {
       <div className={styles.mainFooterContainer}>
         <div className="flex justify-between">
           <Logo />
-          <div className="w-full max-w-[912px] text-white text-xl font-light">
+          <div className="w-full max-w-[860px] text-white text-xl font-light">
             <div className={styles.heroText}>
               Sandow provides personalized fitness & diet solutions through the
               power of AI.

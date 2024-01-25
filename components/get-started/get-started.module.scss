@@ -64,15 +64,19 @@
             height: 64px;
             width: 194px;
 
+            svg {
+                margin-right: 16px;
+                width: 24px;
+                height: 24px;
+            }
+
             &:hover {
                 svg path {
                     fill: #2A2C74
                 }
             }
 
-            svg {
-                margin-right: 16px;
-            }
+
         }
 
     }
