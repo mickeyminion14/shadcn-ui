@@ -79,7 +79,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section className={styles.contactForm}>
+    <section id="contactform" className={styles.contactForm}>
       <div className={styles.contactFormContainer}>
         <h2 className={styles.title}>Shoot Us An Email</h2>
         <p className={styles.description}>

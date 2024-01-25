@@ -31,6 +31,42 @@
     margin: var(--container-gap);
 }
 
+.buttonAction {
+    // width: 238px;
+    height: 64px;
+
+    svg {
+        margin-left: 16px;
+        transition: transform 0.3s ease-out;
+        animation: none;
+
+        path {
+            stroke: #fff;
+        }
+    }
+
+    &:hover svg {
+        animation: hoverAnimation 1s infinite alternate;
+
+        path {
+            stroke: #000;
+        }
+    }
+
+    @keyframes hoverAnimation {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(4px);
+        }
+    }
+}
+
+
+
+
 @media (max-width:992px) {
     .featureBlock {
         flex-direction: column;

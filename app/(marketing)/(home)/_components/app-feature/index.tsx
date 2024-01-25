@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import styles from "./app-feature.module.scss";
+import ArrowRight from "./_icons/arrow-right";
 const AppMainFeature = () => {
   const categories = [
     "Performance",
@@ -59,8 +59,12 @@ const AppMainFeature = () => {
               </div>
             </div>
             <div className="mt-12">
-              <Button variant={"primary"} className="h-16 w-[220px]">
-                Lorem Ipsum <ArrowRight className="w-6 h-6 ml-4" />
+              <Button
+                variant={"primary_outline"}
+                className={styles.buttonAction}
+              >
+                Lorem Ipsum
+                <ArrowRight />
               </Button>
             </div>
           </div>
@@ -83,8 +87,12 @@ const AppMainFeature = () => {
             </div>
 
             <div className="mt-12">
-              <Button variant={"primary_outline"} className="h-16 w-[220px]">
-                Lorem Ipsum <ArrowRight className="w-6 h-6 ml-4" />
+              <Button
+                variant={"primary_outline"}
+                className={styles.buttonAction}
+              >
+                Lorem Ipsum
+                <ArrowRight />
               </Button>
             </div>
           </div>
@@ -118,8 +126,12 @@ const AppMainFeature = () => {
               ))}
             </div>
             <div className="mt-12">
-              <Button variant={"primary_outline"} className="h-16 w-[220px]">
-                Lorem Ipsum <ArrowRight className="w-6 h-6 ml-4" />
+              <Button
+                variant={"primary_outline"}
+                className={styles.buttonAction}
+              >
+                Lorem Ipsum
+                <ArrowRight />
               </Button>
             </div>
           </div>
