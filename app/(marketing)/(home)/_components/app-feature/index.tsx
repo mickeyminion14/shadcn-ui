@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import styles from "./app-feature.module.scss";
+import ArrowRight from "./_icons/arrow-right";
 const AppMainFeature = () => {
   const categories = [
     "Performance",
@@ -15,13 +15,13 @@ const AppMainFeature = () => {
       <div className={styles.featureWrapperContainer}>
         <div className={styles.featureTitle}>WELCOME TO MAXXX</div>
         <div className={styles.featureBlock}>
-          <div className="featureTextBlock flex flex-col py-[70px] max-w-[400px]">
-            <div className="featureBlockTitle text-white font-bold text-5xl text-left">
-              A powerful coach & athlete interface
+          <div className="featureTextBlock flex flex-col max-w-[400px]">
+            <div className="featureBlockTitle text-white font-bold text-3xl text-left">
+              The new competitive advantage in sports
             </div>
             <div className="featureBlockDescription mt-4 font-normal text-[#D7D8D9] text-xl">
-              MAXXX enables coaches to track player progress and patterns to
-              identify potential problems before they happen.
+              Mental fitness for athletes, unlock your full potential because
+              every athlete is unique.
             </div>
             <div className="countInfoBlk mt-12 flex items-center justify-between">
               <div className="flex flex-col">
@@ -59,8 +59,12 @@ const AppMainFeature = () => {
               </div>
             </div>
             <div className="mt-12">
-              <Button variant={"primary"} className="h-16 w-[220px]">
-                Lorem Ipsum <ArrowRight className="w-6 h-6 ml-4" />
+              <Button
+                variant={"primary_outline"}
+                className={styles.buttonAction}
+              >
+                Lorem Ipsum
+                <ArrowRight />
               </Button>
             </div>
           </div>
@@ -71,33 +75,16 @@ const AppMainFeature = () => {
 
         <div className={styles.featureBlock}>
           <div className="featureImageBlock max-w-[100%] max-h-[100%] h-[620px] w-[566px] relative">
-            <Image src={"/images/frame2.png"} alt="frame2" fill />
+            <Image src={"/images/frame3.png"} alt="frame3" fill />
           </div>
-          <div className="featureTextBlock flex flex-col py-[70px] max-w-[400px]">
-            <div className="featureBlockTitle text-white font-bold text-5xl text-left">
-              Geared toward mental fitness to reach max potential
+
+          <div className="featureTextBlock flex flex-col  max-w-[400px]">
+            <div className="featureBlockTitle text-white font-bold text-3xl text-left">
+              A mental trainer & performance coach in your hand
             </div>
             <div className="featureBlockDescription mt-4 font-normal text-[#D7D8D9] text-xl">
-              Imagine a world where an athlete's mind is their most powerful
-              asset. Welcome to that world, welcome to MAXXX Performance.
-            </div>
-
-            <div className="mt-12">
-              <Button variant={"primary_outline"} className="h-16 w-[220px]">
-                Lorem Ipsum <ArrowRight className="w-6 h-6 ml-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.featureBlock}>
-          <div className="featureTextBlock flex flex-col py-[70px] max-w-[400px]">
-            <div className="featureBlockTitle text-white font-bold text-5xl text-left">
-              Combines mental and physical training
-            </div>
-            <div className="featureBlockDescription mt-4 font-normal text-[#D7D8D9] text-xl">
-              With MAXXX, athletes will have a mental performance coach and
-              trainer in the palm of their hand.
+              Tips and workouts in key mental fitness areas. Maxxx meter gauges
+              player progress. Maxxx helps you reach peak performance!
             </div>
             <div className="mt-12 flex flex-col  justify-between">
               {categories.map((category, idx) => (
@@ -118,13 +105,38 @@ const AppMainFeature = () => {
               ))}
             </div>
             <div className="mt-12">
-              <Button variant={"primary_outline"} className="h-16 w-[220px]">
-                Lorem Ipsum <ArrowRight className="w-6 h-6 ml-4" />
+              <Button
+                variant={"primary_outline"}
+                className={styles.buttonAction}
+              >
+                Lorem Ipsum
+                <ArrowRight />
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className={styles.featureBlock}>
+          <div className="featureTextBlock flex flex-col max-w-[400px]">
+            <div className="featureBlockTitle text-white font-bold text-3xl text-left">
+              A proactive tool to enhance coaching capabilities
+            </div>
+            <div className="featureBlockDescription mt-4 font-normal text-[#D7D8D9] text-xl">
+              Assist coaches in addressing mental health challenges. Streamlines
+              monitoring and prioritizes player safety and well being.
+            </div>
+
+            <div className="mt-12">
+              <Button
+                variant={"primary_outline"}
+                className={styles.buttonAction}
+              >
+                Lorem Ipsum
+                <ArrowRight />
               </Button>
             </div>
           </div>
           <div className="featureImageBlock max-w-[100%] max-h-[100%] h-[620px] w-[566px] relative">
-            <Image src={"/images/frame3.png"} alt="frame3" fill />
+            <Image src={"/images/frame2.png"} alt="frame2" fill />
           </div>
         </div>
       </div>

@@ -21,13 +21,14 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
-import styles from "./contact.module.scss";
-import ArrowRight from "../../_icons/arrow-right";
-import EmailIcon from "../../_icons/email";
-import UserIcon from "../../_icons/user";
-import RoleIcon from "../../_icons/role";
-import PhoneIcon from "../../_icons/phone";
-import MessageIcon from "../../_icons/message";
+import ArrowRight from "@/components/icons/arrow-right";
+import EmailIcon from "@/components/icons/email";
+import UserIcon from "@/components/icons/user";
+import RoleIcon from "@/components/icons/role";
+import PhoneIcon from "@/components/icons/phone";
+import MessageIcon from "@/components/icons/message";
+import styles from "./checkout-form.module.scss";
+
 import HttpService from "@/lib/http-service";
 import { useState } from "react";
 import { phoneRegex } from "@/lib/constants";
@@ -37,7 +38,7 @@ export const http = new HttpService();
 
 // Design contact us form schema
 const formSchema = z.object({
-  fullName: z.string({ required_error: "Full name is required" }).min(2, {
+  name: z.string({ required_error: "Full name is required" }).min(2, {
     message: "Full name must be at least 2 characters.",
   }),
   email: z
@@ -45,22 +46,20 @@ const formSchema = z.object({
     .email({ message: "Email address be a valid email" }),
 
   role: z.string().nonempty("Role is required"),
-  mobileNumber: z
+  mobileNo: z
     .string({ required_error: "Phone is required" })
     .min(10, {
       message: "Phone number must be at least 10 characters.",
     })
     .regex(phoneRegex, "Please enter valid mobile number"),
-  message: z.string().min(2, {
-    message: "Message must be at least 2 characters.",
-  }),
+  countryCode: z.string(),
   agree: z.boolean().default(true).optional(),
   // agree: z.literal<boolean>(true, {
   //   errorMap: () => ({ message: "Please check the agreement" }),
   // }),
 });
 
-const ContactForm = () => {
+const CheckoutForm = () => {
   const [loading, setLoading] = useState(false);
   const roles = [
     { value: "PLAYER", viewValue: "Player" },
@@ -73,11 +72,11 @@ const ContactForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullName: "",
+      name: "",
       email: "",
       role: "",
-      mobileNumber: "",
-      message: "",
+      mobileNo: "",
+      countryCode: "+1",
       agree: true,
     },
   });
@@ -89,17 +88,14 @@ const ContactForm = () => {
 
   const createPost = async (payloadData: z.infer<typeof formSchema>) => {
     if (!payloadData.agree) {
-      toast.error("Please check the agreement");
+      toast.error(`Please check “Agree to Terms and Conditions”`);
       return;
     }
     try {
       setLoading(true);
-
       delete payloadData.agree;
-      const response = await http.post("contact-us", payloadData);
-      toast.success(
-        "Your query has been submitted. Our consultant you contact you soon."
-      );
+      const response = await http.post("checkout", payloadData);
+      toast.success("Your query has been submitted.");
       form.reset();
     } catch (error) {
       toast.error("Something went wrong. Please try again");
@@ -110,11 +106,12 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="checkoutform" className={styles.contactForm}>
+    <section id="contactform" className={styles.contactForm}>
       <div className={styles.contactFormContainer}>
-        <h2 className={styles.title}>Shoot Us An Email</h2>
+        <h2 className={styles.title}>Fill Details</h2>
         <p className={styles.description}>
-          We’ll replay within 2-3 working days
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est
+          felis, sagittis viverra .
         </p>
 
         <div className={styles.formWrapper}>
@@ -123,7 +120,7 @@ const ContactForm = () => {
               <div className={styles.formGroup}>
                 <FormField
                   control={form.control}
-                  name="fullName"
+                  name="name"
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
                       <FormLabel>Full Name</FormLabel>
@@ -185,7 +182,7 @@ const ContactForm = () => {
 
                 <FormField
                   control={form.control}
-                  name="mobileNumber"
+                  name="mobileNo"
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
                       <FormLabel>Phone Number</FormLabel>
@@ -201,24 +198,7 @@ const ContactForm = () => {
                   )}
                 />
               </div>
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem className={styles.formField}>
-                    <FormLabel>Main Message</FormLabel>
-                    <MessageIcon />
-                    <FormControl>
-                      <Textarea
-                        placeholder="Hey. I would like to report a bug, Thanks"
-                        className="resize-none"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+
               <div className={styles.formAgreement}>
                 <FormField
                   control={form.control}
@@ -257,4 +237,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default CheckoutForm;

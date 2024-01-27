@@ -27,9 +27,45 @@
 
 
 .featureWrapperContainer {
-    max-width: var(--container-width);
+    max-width: 1264px;
     margin: var(--container-gap);
 }
+
+.buttonAction {
+    // width: 238px;
+    height: 64px;
+
+    svg {
+        margin-left: 16px;
+        transition: transform 0.3s ease-out;
+        animation: none;
+
+        path {
+            stroke: #fff;
+        }
+    }
+
+    &:hover svg {
+        animation: hoverAnimation 1s infinite alternate;
+
+        path {
+            stroke: #000;
+        }
+    }
+
+    @keyframes hoverAnimation {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(4px);
+        }
+    }
+}
+
+
+
 
 @media (max-width:992px) {
     .featureBlock {
@@ -54,6 +90,7 @@
     .featureTitle {
         font-size: 36px;
         margin-bottom: 48px;
+        line-height: normal;
     }
 
     .featureBlock {
@@ -68,8 +105,12 @@
 
         }
 
+        div[class*="featureTextBlock"] {
+            padding-top: 24px;
+        }
+
         &+.featureBlock {
-            margin-top: 0;
+            margin-top: 96px;
         }
 
         div[class*="featureBlockTitle"] {
@@ -78,6 +119,10 @@
 
         div[class*="featureBlockDescription"] {
             font-size: 18px;
+
+            &+div[class*="mt-12"] {
+                margin-top: 32px;
+            }
         }
     }
 }

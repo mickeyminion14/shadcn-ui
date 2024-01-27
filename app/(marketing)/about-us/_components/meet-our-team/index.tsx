@@ -88,7 +88,7 @@ const MeetOurTeam = () => {
 
   return (
     <>
-      <section className={styles.meetOurTeam}>
+      <section id="meetourteam" className={styles.meetOurTeam}>
         <div className={styles.meetOurTeamWrapper}>
           <h2 className={styles.meetOurTeamTitle}>
             Meet Our Team

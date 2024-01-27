@@ -20,7 +20,7 @@ const heroObj: HeroData = {
   title: "Transform Your Mind Elevate Your Game",
   button: {
     text: "Fill The From Below",
-    navigateTo: "#meet-our-team",
+    navigateTo: "#meetourteam",
   },
 };
 

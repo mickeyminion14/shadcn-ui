@@ -296,4 +296,13 @@
 }
 
 
-@media (max-width:767px) {}
+@media (max-width:540px) {
+
+    .ourMission {
+
+        .ourMissionSlider {
+            padding: 0;
+            max-width: 360px;
+        }
+    }
+}
