@@ -16,11 +16,7 @@ const slidesData = [
   },
   {
     title: "Our Vision",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer.",
-  },
-  {
-    title: "Our Goal",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer.",
+    des: "Our Vision is to be a pioneering force, driving positive change and innovation in industry. ",
   },
 ];
 
