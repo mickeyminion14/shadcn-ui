@@ -6,7 +6,7 @@ import WhoWeAre from "./_components/who-we-are";
 import HeroSection from "@/components/hero-section";
 import { HeroData } from "@/components/hero-section/hero-section.interface";
 import "./_styles/embla.css";
-import MaxExperience from "./_components/our-mission";
+import MaxExperience from "./_components/max-experience";
 
 export function generateMetadata(): Metadata {
   return {
