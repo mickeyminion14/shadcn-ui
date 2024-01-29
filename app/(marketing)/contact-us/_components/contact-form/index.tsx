@@ -33,6 +33,7 @@ import { useState } from "react";
 import { phoneRegex } from "@/lib/constants";
 import ButtonLoaderIcon from "@/components/buttonLoader/buttonLoader";
 import { toast } from "sonner";
+import Link from "next/link";
 export const http = new HttpService();
 
 // Design contact us form schema
@@ -54,7 +55,7 @@ const formSchema = z.object({
   message: z.string().min(2, {
     message: "Message must be at least 2 characters.",
   }),
-  agree: z.boolean().default(true).optional(),
+  agree: z.boolean().default(false).optional(),
   // agree: z.literal<boolean>(true, {
   //   errorMap: () => ({ message: "Please check the agreement" }),
   // }),
@@ -78,7 +79,7 @@ const ContactForm = () => {
       role: "",
       mobileNumber: "",
       message: "",
-      agree: true,
+      agree: false,
     },
   });
 
@@ -110,7 +111,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="checkoutform" className={styles.contactForm}>
+    <section id="contactform" className={styles.contactForm}>
       <div className={styles.contactFormContainer}>
         <h2 className={styles.title}>Shoot Us An Email</h2>
         <p className={styles.description}>
@@ -157,7 +158,7 @@ const ContactForm = () => {
                   name="role"
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
-                      <FormLabel>Role *</FormLabel>
+                      <FormLabel>Role </FormLabel>
                       <RoleIcon />
                       <Select
                         onValueChange={field.onChange}
@@ -231,7 +232,12 @@ const ContactForm = () => {
                           onCheckedChange={field.onChange}
                         />
                       </FormControl>
-                      <FormLabel>I Agree to Terms & Conditions</FormLabel>
+                      <FormLabel className={styles.formLabelTerms}>
+                        I Agree to{" "}
+                        <Link href={"/terms-and-conditions"}>
+                          Terms & Conditions
+                        </Link>
+                      </FormLabel>
                       <FormMessage />
                     </FormItem>
                   )}

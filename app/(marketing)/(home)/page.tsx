@@ -20,9 +20,9 @@ const MarketingPage = () => {
     <div className="flex items-center justify-center flex-col">
       <VideoSection />
 
-      <AppMainFeature />
-
       {/* <ScrollAnimation /> */}
+
+      <AppMainFeature />
 
       <GetStarted />
     </div>

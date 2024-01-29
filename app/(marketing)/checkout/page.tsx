@@ -6,9 +6,7 @@ import CheckoutForm from "./_components/checkout-form";
 const Checkout = () => {
   const heroObj: HeroData = {
     image: "/images/checkoubanner.jpg",
-    title: "Checkout with us !",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est.",
+    title: "Transform Your MIND Elevate Your GAME",
     button: {
       text: "Fill The From Below",
       navigateTo: "#checkoutform",

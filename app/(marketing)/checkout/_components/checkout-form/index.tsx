@@ -34,6 +34,7 @@ import { useState } from "react";
 import { phoneRegex } from "@/lib/constants";
 import ButtonLoaderIcon from "@/components/buttonLoader/buttonLoader";
 import { toast } from "sonner";
+import Link from "next/link";
 export const http = new HttpService();
 
 // Design contact us form schema
@@ -77,7 +78,7 @@ const CheckoutForm = () => {
       role: "",
       mobileNo: "",
       countryCode: "+1",
-      agree: true,
+      agree: false,
     },
   });
 
@@ -106,9 +107,9 @@ const CheckoutForm = () => {
   };
 
   return (
-    <section id="contactform" className={styles.contactForm}>
+    <section id="checkoutform" className={styles.contactForm}>
       <div className={styles.contactFormContainer}>
-        <h2 className={styles.title}>Fill Details</h2>
+        <h2 className={styles.title}>Connect with us</h2>
         <p className={styles.description}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est
           felis, sagittis viverra .
@@ -154,7 +155,7 @@ const CheckoutForm = () => {
                   name="role"
                   render={({ field }) => (
                     <FormItem className={styles.formField}>
-                      <FormLabel>Role *</FormLabel>
+                      <FormLabel>Role </FormLabel>
                       <RoleIcon />
                       <Select
                         onValueChange={field.onChange}
@@ -211,7 +212,12 @@ const CheckoutForm = () => {
                           onCheckedChange={field.onChange}
                         />
                       </FormControl>
-                      <FormLabel>I Agree to Terms & Conditions</FormLabel>
+                      <FormLabel className={styles.formLabelTerms}>
+                        I Agree to{" "}
+                        <Link href={"/terms-and-conditions"}>
+                          Terms & Conditions
+                        </Link>{" "}
+                      </FormLabel>
                       <FormMessage />
                     </FormItem>
                   )}

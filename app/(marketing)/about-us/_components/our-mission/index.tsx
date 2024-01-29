@@ -6,12 +6,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import SettingIcon from "../icons/setting";
 import styles from "./our-mission.module.scss";
-import { ArrowDownRight, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import ArrowRight from "../icons/arrow-right";
 
 const slidesData = [
   {
-    title: "Our Mission",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer.",
+    title: "Experience MAXXX",
+    des: "Register your school or program to set an appointment with one of our sales representatives.",
   },
   {
     title: "Our Vision",
@@ -28,7 +29,7 @@ type PropType = {
   options?: EmblaOptionsType;
 };
 
-const OurMission = () => {
+const MaxExperience = () => {
   const options: EmblaOptionsType = { axis: "x", loop: true, duration: 60 };
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -71,15 +72,24 @@ const OurMission = () => {
 
   return (
     <>
-      <section className={styles.ourMission}>
-        <Image
-          className={styles.ourMissionBannerImage}
+      <section className={styles.maxExperience}>
+        {/* <Image
+          className={styles.maxExperienceBannerImage}
           src={"/images/about/2-about_banner.jpg"}
           alt="hero background image"
           fill
-        />
-        <div className={styles.ourMissionWrapper}>
-          <div className={styles.ourMissionSlider}>
+        /> */}
+        <video
+          className={styles.maxExperienceVideoBanner}
+          preload="auto"
+          autoPlay
+          muted
+          loop
+        >
+          <source src="/videos/draft.mp4" />
+        </video>
+        <div className={styles.maxExperienceWrapper}>
+          <div className={styles.maxExperienceSlider}>
             <div className={styles.embla}>
               <div className={styles.embla__viewport} ref={emblaRef}>
                 <div className={styles.embla__container}>
@@ -95,14 +105,15 @@ const OurMission = () => {
                           </Button>
                           <h3 className={styles.title}>{item?.title}</h3>
                           <p className={styles.description}>{item?.des}</p>
-
-                          <Button
-                            variant={"primary_outline"}
-                            className={styles.buttonAction}
-                          >
-                            Meet Our Team
-                            <ArrowRight />
-                          </Button>
+                          <Link href={"/contact-us"}>
+                            <Button
+                              variant={"primary_outline"}
+                              className={styles.buttonAction}
+                            >
+                              Connect with us
+                              <ArrowRight />
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -136,4 +147,4 @@ const OurMission = () => {
   );
 };
 
-export default OurMission;
+export default MaxExperience;

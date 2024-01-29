@@ -7,9 +7,9 @@ import { HeroData } from "@/components/hero-section/hero-section.interface";
 const ContactUs = () => {
   const heroObj: HeroData = {
     image: "/images/contact-us_banner.jpg",
-    title: "Get In Touch",
+    title: "Let’s Connect",
     description:
-      "We'd love to hear from you. Fill the form below to contact us.",
+      "We look to partner with community organizations and foundations looking to improve the mental health and well being of student athletes.",
     button: {
       text: "Fill The From Below",
       navigateTo: "#contactform",

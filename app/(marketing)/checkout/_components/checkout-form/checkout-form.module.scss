@@ -40,6 +40,7 @@
         gap: 20px;
     }
 
+
     .formField {
         width: 100%;
         position: relative;
@@ -64,6 +65,12 @@
             &~textarea,
             &~button[role="combobox"] {
                 padding-left: 46px;
+
+                svg {
+                    opacity: 1;
+                    width: 28px;
+                    height: 28px;
+                }
             }
         }
 
@@ -111,8 +118,20 @@
             left: 0;
             width: 100%;
             margin-top: 2px !important;
+            color: #FF4D4D;
 
         }
+
+        // button[role="checkbox"] {
+        button[data-state="checked"] {
+            background-color: #ffffff;
+
+            svg {
+                stroke: #2D3035;
+            }
+        }
+
+        // }
 
     }
 
@@ -140,6 +159,18 @@
             transform: scale(2);
             border: 1px solid #FFF;
 
+        }
+    }
+}
+
+
+.formLabelTerms {
+    a {
+        border-bottom: 1px solid #FFF;
+        transition: .3s ease all;
+
+        &:hover {
+            opacity: 0.8;
         }
     }
 }

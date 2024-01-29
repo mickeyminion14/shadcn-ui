@@ -39,9 +39,7 @@ const AppMainFeature = () => {
                   Coaches
                 </div>
               </div>
-              <div
-                style={{ borderLeft: "2px solid #676C75", height: "80%" }}
-              ></div>
+              <div className={styles.borderBetween}></div>
               <div className="flex flex-col">
                 <div className="flex items-center">
                   <Image

@@ -9,18 +9,18 @@ import styles from "./who-we-are.module.scss";
 
 const slidesData = [
   {
-    title: "Lorem ipsum dolor",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer sagittis viverra nulla mattis scelerisque.",
+    title: "Select Athletes",
+    des: "Select your specific usage to receive all of the customized tools that will unlock your MAXXX Experience.  See your specialized features.",
     img: "/images/about/wwr1.png",
   },
   {
-    title: "Lorem ipsum dolor",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer sagittis viverra nulla mattis scelerisque.",
+    title: "Select Coaches",
+    des: "Select your specific usage to receive all of the customized tools that will unlock your MAXXX Experience. See your specialized features.",
     img: "/images/about/wwr2.png",
   },
   {
-    title: "Lorem ipsum dolor",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer sagittis viverra nulla mattis scelerisque.",
+    title: "Select Recruiter",
+    des: "Select your specific usage to receive all of the customized tools that will unlock your MAXXX Experience. See your specialized features. ",
     img: "/images/about/wwr3.png",
   },
 ];
@@ -78,7 +78,7 @@ const WhoWeAre: React.FC<PropType> = ({
     <>
       <section className={styles.whoWeAre}>
         <div className={styles.whoWeAreWrapper}>
-          <h2 className={styles.whoWeAreTitle}> Who We Are </h2>
+          <h2 className={styles.whoWeAreTitle}> Download Here </h2>
           <div className={styles.embla}>
             <div className={styles.embla__viewport} ref={emblaRef}>
               <div className={styles.embla__container}>
@@ -95,7 +95,8 @@ const WhoWeAre: React.FC<PropType> = ({
                         <h3 className={styles.title}>{item?.title}</h3>
                         <p className={styles.description}>{item?.des}</p>
                         <div className={styles.counters}>
-                          {index + 1}/{slidesData?.length}
+                          {("0" + (selectedIndex + 1)).slice(-2)}/
+                          {("0" + slidesData?.length).slice(-2)}
                         </div>
                       </div>
                       <div className={styles.infoImage}>

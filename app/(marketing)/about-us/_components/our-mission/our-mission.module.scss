@@ -1,6 +1,6 @@
 // who we are section
 
-.ourMission {
+.maxExperience {
     padding: 125px 0;
     overflow: hidden;
     border-radius: 60px;
@@ -11,7 +11,7 @@
     background-size: cover;
     position: relative;
 
-    .ourMissionWrapper {
+    .maxExperienceWrapper {
         max-width: var(--container-width);
         margin: var(--container-gap);
         display: flex;
@@ -19,12 +19,21 @@
         justify-content: flex-end;
     }
 
-    .ourMissionSlider {
+    .maxExperienceSlider {
         max-width: 500px;
     }
 }
 
-.ourMissionBannerImage {
+.maxExperienceBannerImage {
+    object-fit: cover;
+}
+
+.maxExperienceVideoBanner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     object-fit: cover;
 }
 
@@ -56,6 +65,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            text-shadow: 0 0 5px #333;
 
         }
 
@@ -72,6 +82,7 @@
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+            text-shadow: 0 0 5px #333;
         }
 
 
@@ -231,6 +242,10 @@
 
     &:hover svg {
         animation: hoverAnimation 1s infinite alternate;
+
+        path {
+            fill: #000
+        }
     }
 
     @keyframes hoverAnimation {
@@ -250,20 +265,20 @@
         padding: 0 40px;
     }
 
-    .ourMission {
+    .maxExperience {
         padding-bottom: 60px;
 
-        .ourMissionWrapper {
+        .maxExperienceWrapper {
             justify-content: center;
             margin-top: 200px;
         }
 
-        .ourMissionSlider {
+        .maxExperienceSlider {
             padding: 0 20px;
         }
     }
 
-    .ourMissionBannerImage {
+    .maxExperienceBannerImage {
         object-fit: cover;
         width: 100% !important;
         height: 350px !important;
@@ -298,9 +313,9 @@
 
 @media (max-width:540px) {
 
-    .ourMission {
+    .maxExperience {
 
-        .ourMissionSlider {
+        .maxExperienceSlider {
             padding: 0;
             max-width: 360px;
         }

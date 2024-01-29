@@ -1,13 +1,11 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import React, { useState, useEffect, useCallback } from "react";
 import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import SettingIcon from "../icons/setting";
 import styles from "./meet-our-team.module.scss";
-import { NextButton, PrevButton } from "./EmblaCarouselArrowsDotsButtons";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import ArrowLeft from "@/components/icons/arrow-left";
+import ArrowRight from "@/components/icons/arrow-right";
 
 const slidesData = [
   {

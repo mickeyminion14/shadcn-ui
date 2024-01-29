@@ -64,11 +64,13 @@ export const Footer = () => {
                 </label>
               </div>
             </div>
-            <div className="mt-8">Copyright ©2025, All Rights Reserved</div>
+            <div className="mt-8">
+              Copyright ©{new Date().getFullYear()}, All Rights Reserved
+            </div>
           </div>
           <div className={styles.footerLinkWrap}>
             <div className={styles.footerLinkWrapInr}>
-              <div className={styles.footerLinkHeading}>Main Site Map</div>
+              <div className={styles.footerLinkHeading}>Main SiteMap</div>
               <FooterLinks />
             </div>
             <div className={styles.footerLinkWrapInr}>

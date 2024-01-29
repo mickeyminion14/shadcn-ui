@@ -18,9 +18,9 @@ const GetStarted = () => {
         ></div>
         <div className={styles.getStatedContentWrapper}>
           <div className={styles.getStatedInfoBlock}>
-            <h3 className={styles.title}>Get Started Now, For Free!</h3>
+            <h3 className={styles.title}>Download Today! </h3>
             <p className={styles.description}>
-              Well, what are you waiting for? Download our app to experience
+              Well, what are you waiting for? Download the app to experience
               Maxxx level.
             </p>
             <div className={styles.playButton}>
