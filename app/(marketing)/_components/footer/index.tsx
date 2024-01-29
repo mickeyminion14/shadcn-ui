@@ -75,9 +75,15 @@ export const Footer = () => {
             </div>
             <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>App Features</div>
-              <div className={styles.footerLinks}>Player Motivations</div>
-              <div className={styles.footerLinks}>Parent Assist</div>
-              <div className={styles.footerLinks}>Recruiter Mode</div>
+              <Link href={"/player-motivations"} className={styles.footerLinks}>
+                Player Motivations
+              </Link>
+              <Link href={"/parent-assist"} className={styles.footerLinks}>
+                Parent Assist
+              </Link>
+              <Link href={"/recruiter-mode"} className={styles.footerLinks}>
+                Recruiter Mode
+              </Link>
             </div>
             <div className={styles.footerLinkWrapInr}>
               <Link href={"/legal"} className={styles.footerLinkHeading}>
