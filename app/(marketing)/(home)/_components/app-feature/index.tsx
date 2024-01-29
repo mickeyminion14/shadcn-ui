@@ -61,7 +61,7 @@ const AppMainFeature = () => {
                 variant={"primary_outline"}
                 className={styles.buttonAction}
               >
-                Lorem Ipsum
+                Know More
                 <ArrowRight />
               </Button>
             </div>
@@ -107,7 +107,7 @@ const AppMainFeature = () => {
                 variant={"primary_outline"}
                 className={styles.buttonAction}
               >
-                Lorem Ipsum
+                Try Out
                 <ArrowRight />
               </Button>
             </div>
@@ -128,7 +128,7 @@ const AppMainFeature = () => {
                 variant={"primary_outline"}
                 className={styles.buttonAction}
               >
-                Lorem Ipsum
+                Try Out
                 <ArrowRight />
               </Button>
             </div>

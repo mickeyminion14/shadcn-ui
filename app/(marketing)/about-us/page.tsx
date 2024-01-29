@@ -18,10 +18,10 @@ export function generateMetadata(): Metadata {
 const heroObj: HeroData = {
   image: "/images/about/1-about_banner.jpg",
   title: "Transform Your Mind Elevate Your Game",
-  button: {
-    text: "Meet Our Team",
-    navigateTo: "#meetourteam",
-  },
+  // button: {
+  //   text: "Meet Our Team",
+  //   navigateTo: "#meetourteam",
+  // },
 };
 
 const AboutUs = () => {
@@ -33,7 +33,7 @@ const AboutUs = () => {
 
         <WhoWeAre />
         <MaxExperience />
-        <MeetOurTeam />
+        {/* <MeetOurTeam /> */}
       </div>
     </>
   );

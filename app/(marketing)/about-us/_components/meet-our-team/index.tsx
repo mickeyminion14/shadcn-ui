@@ -9,18 +9,18 @@ import ArrowRight from "@/components/icons/arrow-right";
 
 const slidesData = [
   {
-    title: "Jane Cooper",
-    des: "CEO, Co-Founder",
+    title: "Kevin Jordan",
+    // des: "CEO, Co-Founder",
     img: "/images/about/team1.png",
   },
   {
-    title: "Wade Warren",
-    des: "CEO, Co-Founder",
+    title: "Randy Beverly Jr.",
+    // des: "CEO, Co-Founder",
     img: "/images/about/team2.png",
   },
   {
     title: "Theresa Web",
-    des: "CEO, Co-Founder",
+    // des: "CEO, Co-Founder",
     img: "/images/about/team3.png",
   },
   {
