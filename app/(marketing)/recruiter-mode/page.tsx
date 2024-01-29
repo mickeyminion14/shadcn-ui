@@ -4,13 +4,8 @@ import React from "react";
 
 const RecruitorMode = () => {
   const heroObj: HeroData = {
-    image: "/images/comning-soon.jpg",
+    image: "/images/coming-soon.jpg",
     title: "Coming Soon..",
-    description: "We are launching new building construction website.",
-    // button: {
-    //   text: "Meet Our Team",
-    //   navigateTo: "#meetourteam",
-    // },
   };
   return (
     <div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoSection = () => {
   return (
-    <section className="min-w-full h-[calc(100vh-120px)] mt-[-80px] relative">
+    <section className="min-w-full h-[calc(100vh-40px)] mt-[-80px] relative">
       <video
         className="w-full h-[100%] object-cover absolute"
         preload="auto"
