@@ -5,7 +5,7 @@ import styles from "./privacy-policy.module.scss";
 import DynamicPage from "@/components/dynamicPage";
 const PrivacyPolicy = () => {
   const heroObj: HeroData = {
-    image: "/images/contact-us_banner.jpg",
+    image: "/images/privacy-terms.jpg",
     title: "Privacy Policy",
     description: "This page is under development",
   };
