@@ -1,16 +1,20 @@
 import HeroSection from "@/components/hero-section";
 import { HeroData } from "@/components/hero-section/hero-section.interface";
+import { siteConfig } from "@/config/site";
+import { Metadata } from "next";
 import React from "react";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: siteConfig.parentAssist.name,
+    description: siteConfig.parentAssist.description,
+  };
+}
 
 const ParentAssist = () => {
   const heroObj: HeroData = {
-    image: "/images/comning-soon.jpg",
+    image: "/images/coming-soon.jpg",
     title: "Coming Soon..",
-    description: "We are launching new building construction website.",
-    // button: {
-    //   text: "Meet Our Team",
-    //   navigateTo: "#meetourteam",
-    // },
   };
   return (
     <div>
