@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import styles from "./app-feature.module.scss";
 import ArrowRight from "./_icons/arrow-right";
+import Link from "next/link";
 const AppMainFeature = () => {
   const categories = [
     "Performance",
@@ -57,13 +58,15 @@ const AppMainFeature = () => {
               </div>
             </div>
             <div className="mt-12">
-              <Button
-                variant={"primary_outline"}
-                className={styles.buttonAction}
-              >
-                Know More
-                <ArrowRight />
-              </Button>
+              <Link href="/about-us">
+                <Button
+                  variant={"primary_outline"}
+                  className={styles.buttonAction}
+                >
+                  Know More
+                  <ArrowRight />
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="featureImageBlock max-w-[100%] max-h-[100%] h-[620px] w-[566px] relative">
@@ -103,13 +106,15 @@ const AppMainFeature = () => {
               ))}
             </div>
             <div className="mt-12">
-              <Button
-                variant={"primary_outline"}
-                className={styles.buttonAction}
-              >
-                Try Out
-                <ArrowRight />
-              </Button>
+              <Link href="/checkout">
+                <Button
+                  variant={"primary_outline"}
+                  className={styles.buttonAction}
+                >
+                  Try Out
+                  <ArrowRight />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -124,13 +129,15 @@ const AppMainFeature = () => {
             </div>
 
             <div className="mt-12">
-              <Button
-                variant={"primary_outline"}
-                className={styles.buttonAction}
-              >
-                Try Out
-                <ArrowRight />
-              </Button>
+              <Link href="/checkout">
+                <Button
+                  variant={"primary_outline"}
+                  className={styles.buttonAction}
+                >
+                  Try Out
+                  <ArrowRight />
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="featureImageBlock max-w-[100%] max-h-[100%] h-[620px] w-[566px] relative">
