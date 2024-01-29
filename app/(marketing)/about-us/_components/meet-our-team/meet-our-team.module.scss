@@ -175,11 +175,15 @@
     border: 1px solid #FFF;
     transition: .5s ease-out;
 
+    svg path {
+        stroke: #FFFFFF !important;
+    }
+
     &:hover {
         background-color: #ffffff;
 
-        svg {
-            stroke: #111214;
+        svg path {
+            stroke: #111214 !important;
         }
     }
 }
@@ -245,7 +249,7 @@
         right: calc(50% - 145px);
 
         .embla__button {
-            flex: 1
+            flex: 1;
         }
     }
 

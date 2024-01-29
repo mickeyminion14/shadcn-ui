@@ -4,7 +4,7 @@ import React from "react";
 
 const TermAndConditions = () => {
   const heroObj: HeroData = {
-    image: "/images/contact-us_banner.jpg",
+    image: "/images/privacy-terms.jpg",
     title: "Terms & Conditions",
     description: "This page is under development",
   };

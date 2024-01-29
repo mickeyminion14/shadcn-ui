@@ -64,18 +64,26 @@ export const Footer = () => {
                 </label>
               </div>
             </div>
-            <div className="mt-8">Copyright ©2025, All Rights Reserved</div>
+            <div className="mt-8">
+              Copyright ©{new Date().getFullYear()}, All Rights Reserved
+            </div>
           </div>
           <div className={styles.footerLinkWrap}>
             <div className={styles.footerLinkWrapInr}>
-              <div className={styles.footerLinkHeading}>Main Site Map</div>
+              <div className={styles.footerLinkHeading}>Main SiteMap</div>
               <FooterLinks />
             </div>
             <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>App Features</div>
-              <div className={styles.footerLinks}>Player Motivations</div>
-              <div className={styles.footerLinks}>Parent Assist</div>
-              <div className={styles.footerLinks}>Recruiter Mode</div>
+              <Link href={"/player-motivations"} className={styles.footerLinks}>
+                Player Motivations
+              </Link>
+              <Link href={"/parent-assist"} className={styles.footerLinks}>
+                Parent Assist
+              </Link>
+              <Link href={"/recruiter-mode"} className={styles.footerLinks}>
+                Recruiter Mode
+              </Link>
             </div>
             <div className={styles.footerLinkWrapInr}>
               <Link href={"/legal"} className={styles.footerLinkHeading}>
@@ -90,9 +98,9 @@ export const Footer = () => {
               >
                 Terms & Conditions
               </Link>
-              <Link href={"/cookie-policy"} className={styles.footerLinks}>
+              {/* <Link href={"/cookie-policy"} className={styles.footerLinks}>
                 Cookie Policy
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

@@ -2,9 +2,9 @@
 import React from "react";
 import styles from "./hero-section.module.scss";
 import { Button } from "@/components/ui/button";
-import ArrowDownIcon from "./_icons/arrow-down";
 import { HeroProps } from "./hero-section.interface";
 import Image from "next/image";
+import ArrowDownIcon from "../icons/arrow-down";
 
 const HeroSection = (props: HeroProps) => {
   function scrollToTop(target: any) {

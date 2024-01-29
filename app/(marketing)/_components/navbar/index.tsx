@@ -4,13 +4,13 @@ import NavbarRight from "./_components/navbar-right";
 
 export const Navbar = () => {
   return (
-    <div className={styles.navbarWrapper}>
+    <header className={styles.navbarWrapper}>
       <div className={styles.navbarInrWrapper}>
         <div className="space-x-4 flex items-center justify-between w-full">
           <Logo />
           <NavbarRight />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
