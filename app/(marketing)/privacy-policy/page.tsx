@@ -14,9 +14,7 @@ const PrivacyPolicy = () => {
     <div>
       <HeroSection heroData={heroObj} />
 
-      <div className={styles.contactUsWrapper}>
-        <DynamicPage />
-      </div>
+      <div className={styles.contactUsWrapper}>{/* <DynamicPage /> */}</div>
     </div>
   );
 };
