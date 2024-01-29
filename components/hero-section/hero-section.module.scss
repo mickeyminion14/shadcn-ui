@@ -9,8 +9,6 @@
         object-fit: cover;
     }
 
-    .heroSectionImage {}
-
     .heroSectionWrapper {
         max-width: var(--container-width);
         margin: var(--container-gap);
@@ -121,6 +119,18 @@
 
         .button {
             margin-top: 16px;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .heroSection {
+        overflow: hidden;
+
+        &>img {
+            max-width: initial;
+            width: calc(100% + 400px) !important;
+            left: -400px !important;
         }
     }
 }
