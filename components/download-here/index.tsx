@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import styles from "./get-started.module.scss";
+import styles from "./download-here.module.scss";
 import PlayStoreIcon from "../icons/play-store";
 import AppStoreIcon from "../icons/app-store";
-const GetStarted = () => {
+const DownloadHere = () => {
   return (
     <section className={styles.getStatedWrapper}>
       <div className={styles.getStatedContainer}>
         <div
           className={styles.getStatedBannerImage}
           style={{
-            background: `url(${"/images/frame4.png"})`,
+            background: `url(${"/images/checkout-app.jpg"})`,
             backgroundSize: "100%",
             backgroundPosition: "bottom",
             backgroundRepeat: "no-repeat",
@@ -40,4 +40,4 @@ const GetStarted = () => {
   );
 };
 
-export default GetStarted;
+export default DownloadHere;

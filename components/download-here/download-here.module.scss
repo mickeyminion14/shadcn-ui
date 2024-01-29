@@ -1,0 +1,147 @@
+.getStatedWrapper {
+    border-radius: 40px;
+    background: #2A2C74;
+    padding: 96px 0;
+    width: 100%;
+    position: relative;
+}
+
+.getStatedContainer {
+    max-width: var(--container-width);
+    margin: var(--container-gap);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 500px;
+}
+
+.getStatedBannerImage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 10%;
+}
+
+.getStatedContentWrapper {
+    width: 40%;
+    position: relative;
+    z-index: 1;
+}
+
+.getStatedInfoBlock {
+    max-width: 430px;
+
+    .title {
+        color: #ffffff;
+        font-family: "Work Sans", sans-serif;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 56px;
+        /* 116.667% */
+        letter-spacing: -0.72px;
+    }
+
+    .description {
+        margin-top: 24px;
+        color: #ffffff;
+        font-family: "Work Sans", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+
+
+    }
+
+    .playButton {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 45px;
+        margin-top: 48px;
+
+        .button {
+            height: 64px;
+            width: 194px;
+
+            svg {
+                margin-right: 16px;
+                width: 24px;
+                height: 24px;
+            }
+
+            &:hover {
+                svg path {
+                    fill: #2A2C74
+                }
+            }
+
+
+        }
+
+    }
+}
+
+@media (max-width:992px) {
+    .getStatedWrapper {
+        max-width: calc(100% - 32px);
+        margin: 0 auto;
+        padding: 64px 0;
+    }
+
+    .getStatedContentWrapper {
+        width: 100%;
+    }
+
+    .getStatedContainer {
+        justify-content: center;
+        height: initial;
+        margin-bottom: 300px;
+    }
+
+    .getStatedInfoBlock {
+        max-width: 100%;
+
+        .playButton {
+            justify-content: flex-start;
+        }
+    }
+
+}
+
+@media (max-width:767px) {
+    .getStatedInfoBlock {
+
+        .title {
+            font-size: 36px;
+            line-height: normal;
+        }
+
+        .description {
+            font-size: 18px;
+            margin-top: 16px;
+        }
+
+        .playButton {
+            gap: 32px;
+            margin-top: 32px;
+        }
+    }
+}
+
+
+@media (max-width:540px) {
+    .getStatedInfoBlock {
+
+        .playButton {
+            gap: 32px;
+            margin-top: 32px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+
+}

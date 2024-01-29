@@ -92,9 +92,9 @@ export const Footer = () => {
               >
                 Terms & Conditions
               </Link>
-              <Link href={"/cookie-policy"} className={styles.footerLinks}>
+              {/* <Link href={"/cookie-policy"} className={styles.footerLinks}>
                 Cookie Policy
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
