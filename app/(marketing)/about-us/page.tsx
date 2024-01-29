@@ -6,7 +6,7 @@ import WhoWeAre from "./_components/who-we-are";
 import HeroSection from "@/components/hero-section";
 import { HeroData } from "@/components/hero-section/hero-section.interface";
 import "./_styles/embla.css";
-import MaxExperience from "./_components/our-mission";
+import MaxExperience from "./_components/max-experience";
 
 export function generateMetadata(): Metadata {
   return {
@@ -18,10 +18,10 @@ export function generateMetadata(): Metadata {
 const heroObj: HeroData = {
   image: "/images/about/1-about_banner.jpg",
   title: "Transform Your Mind Elevate Your Game",
-  button: {
-    text: "Meet Our Team",
-    navigateTo: "#meetourteam",
-  },
+  // button: {
+  //   text: "Meet Our Team",
+  //   navigateTo: "#meetourteam",
+  // },
 };
 
 const AboutUs = () => {
@@ -33,7 +33,7 @@ const AboutUs = () => {
 
         <WhoWeAre />
         <MaxExperience />
-        <MeetOurTeam />
+        {/* <MeetOurTeam /> */}
       </div>
     </>
   );
