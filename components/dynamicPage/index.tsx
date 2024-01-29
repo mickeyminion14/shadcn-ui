@@ -1,5 +1,6 @@
 "use client";
-const DynamicPage = ({ content }: any) => {
+const DynamicPage = () => {
+  let content: any;
   async function getServerSideProps() {
     const res = await fetch(
       `https://maxxxdevadmin.appskeeper.in/static-content?contentType=TERMS_AND_CONDITIONS&entityType=PLAYER`
