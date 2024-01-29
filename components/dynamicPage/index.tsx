@@ -1,8 +1,9 @@
 "use client";
+import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
-
 const DynamicPage = () => {
-  const [htmlContent, setHtmlContent] = useState<string>("");
+  const [htmlContent, setHtmlContent] = useState<any>("");
+  const sanitizedHtml = DOMPurify.sanitize(htmlContent);
 
   useEffect(() => {
     const fetchHtmlContent = async () => {
@@ -27,7 +28,8 @@ const DynamicPage = () => {
 
   return (
     <div>
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      {/* <div dangerouslySetInnerHTML={{ __html: htmlContent }} /> */}
+      <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
     </div>
   );
 };
