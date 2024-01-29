@@ -1,12 +1,9 @@
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Mail } from "lucide-react";
 import styles from "./footer.module.scss";
 import FacebookIcon from "./icons/facebook";
 import InstagramIcon from "./icons/instagram";
 import YoutubeIcon from "./icons/youtube";
-import ArrowRight from "./icons/arrow-right";
 import FooterLinks from "./links";
 import Link from "next/link";
 
@@ -44,7 +41,7 @@ export const Footer = () => {
                 </div>
               </Button>
             </div>
-            <div className="mt-16">
+            {/* <div className="mt-16">
               <div className="text-white text-sm font-bold">
                 Subscribe to newsletter
               </div>
@@ -63,7 +60,7 @@ export const Footer = () => {
                   />
                 </label>
               </div>
-            </div>
+            </div> */}
             <div className="mt-8">
               Copyright ©{new Date().getFullYear()}, All Rights Reserved
             </div>

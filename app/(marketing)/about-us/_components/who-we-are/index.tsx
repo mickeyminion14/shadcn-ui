@@ -32,7 +32,11 @@ type PropType = {
 
 const WhoWeAre: React.FC<PropType> = ({
   slideCount = 5,
-  options = { axis: "y" },
+  options = {
+    axis: "y",
+    loop: true,
+    duration: 25,
+  },
 }) => {
   const slides = Array.from(Array(slideCount).keys());
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
