@@ -4,6 +4,8 @@ import CheckoutForm from "./_components/checkout-form";
 import DownloadHere from "@/components/download-here";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
+import WhoWeAre from "@/components/who-we-are";
+import MaxExperience from "@/components/max-experience";
 
 export function generateMetadata(): Metadata {
   return {
@@ -14,20 +16,22 @@ export function generateMetadata(): Metadata {
 
 const Checkout = () => {
   const heroObj: HeroData = {
-    image: "/images/checkoubanner.jpg",
-    title: "Transform Your MIND Elevate Your GAME",
-    button: {
-      text: "Fill The From Below",
-      navigateTo: "#checkoutform",
-    },
+    image: "/images/about/1-about_banner.jpg",
+    title: "Transform Your Mind Elevate Your Game",
+    // button: {
+    //   text: "Meet Our Team",
+    //   navigateTo: "#meetourteam",
+    // },
   };
 
   return (
     <div className="contactUsWrapper">
       <HeroSection heroData={heroObj} />
+      <WhoWeAre />
+      <MaxExperience />
       {/* <LocationMap /> */}
-      <CheckoutForm />
-      <DownloadHere />
+      {/* <CheckoutForm />
+      <DownloadHere /> */}
     </div>
   );
 };

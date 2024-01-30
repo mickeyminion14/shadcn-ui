@@ -22,7 +22,10 @@ export const Footer = () => {
         <div className="mt-24 flex justify-between">
           <div className="text-white">
             <div className={styles.playButton}>
-              <Link href={"#"} target="_blank">
+              <Link
+                href={"https://apps.apple.com/us/app/maxxx/id6460887590"}
+                target="_blank"
+              >
                 <Button variant={"primary_outline"} className={styles.button}>
                   <AppStoreIcon />
                   App Store

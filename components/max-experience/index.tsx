@@ -4,9 +4,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import SettingIcon from "../icons/setting";
-import styles from "./our-mission.module.scss";
+import styles from "./max-experience.module.scss";
 import Link from "next/link";
-import ArrowRight from "../icons/arrow-right";
+import ArrowRight from "@/components/icons/arrow-right";
 
 const slidesData = [
   {

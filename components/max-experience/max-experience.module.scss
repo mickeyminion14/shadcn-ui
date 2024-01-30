@@ -234,21 +234,25 @@
 
 
 .buttonAction {
-    margin-top: 40px;
-    width: 238px;
+    min-width: 238px;
     height: 64px;
+    margin-top: 40px;
 
     svg {
         margin-left: 16px;
         transition: transform 0.3s ease-out;
         animation: none;
+
+        path {
+            stroke: #fff;
+        }
     }
 
     &:hover svg {
         animation: hoverAnimation 1s infinite alternate;
 
         path {
-            fill: #000
+            stroke: #000;
         }
     }
 
