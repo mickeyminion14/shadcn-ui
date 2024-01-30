@@ -6,6 +6,8 @@ import InstagramIcon from "./icons/instagram";
 import YoutubeIcon from "./icons/youtube";
 import FooterLinks from "./links";
 import Link from "next/link";
+import AppStoreIcon from "@/components/icons/app-store";
+import PlayStoreIcon from "@/components/icons/play-store";
 
 export const Footer = () => {
   return (
@@ -18,8 +20,28 @@ export const Footer = () => {
           </div>
         </div>
         <div className="mt-24 flex justify-between">
-          {/* <div className="text-white"> */}
-          {/* <div
+          <div className="text-white">
+            <div className={styles.playButton}>
+              <Link href={"#"} target="_blank">
+                <Button variant={"primary_outline"} className={styles.button}>
+                  <AppStoreIcon />
+                  App Store
+                </Button>
+              </Link>
+
+              <Link
+                href={
+                  "https://play.google.com/store/apps/details?id=com.isports.maxxx"
+                }
+                target="_blank"
+              >
+                <Button variant={"primary_outline"} className={styles.button}>
+                  <PlayStoreIcon />
+                  Play Store
+                </Button>
+              </Link>
+            </div>
+            {/* <div
               className={`${styles.socialmedia} flex justify-between  max-w-[200px]`}
             >
               <Button className="h-16 w-16" variant={"primary_outline"}>
@@ -38,7 +60,7 @@ export const Footer = () => {
                 </div>
               </Button>
             </div> */}
-          {/* <div className="mt-16">
+            {/* <div className="mt-16">
               <div className="text-white text-sm font-bold">
                 Subscribe to newsletter
               </div>
@@ -58,10 +80,10 @@ export const Footer = () => {
                 </label>
               </div>
             </div> */}
-          {/* <div className="mt-8">
+            <div className="mt-8">
               Copyright ©{new Date().getFullYear()}, All Rights Reserved
-            </div> */}
-          {/* </div> */}
+            </div>
+          </div>
           <div className={styles.footerLinkWrap}>
             <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>Main SiteMap</div>
@@ -97,9 +119,6 @@ export const Footer = () => {
               </Link> */}
             </div>
           </div>
-        </div>
-        <div className="mt-8 text-center">
-          Copyright ©{new Date().getFullYear()}, All Rights Reserved
         </div>
       </div>
     </footer>

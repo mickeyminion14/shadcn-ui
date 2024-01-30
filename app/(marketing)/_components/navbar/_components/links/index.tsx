@@ -8,8 +8,8 @@ const Links = () => {
 
   const links: { title: string; url: string }[] = [
     { title: "Home", url: "/" },
-    { title: "About", url: "/about-us" },
     { title: "Checkout", url: "/checkout" },
+    { title: "Connect", url: "/contact-us" },
   ];
   return (
     <ul className=" hidden sm:flex sm:justify-between md:w-[400px] sm:w-[300px] select-none">

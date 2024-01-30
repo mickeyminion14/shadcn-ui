@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./get-started.module.scss";
 import PlayStoreIcon from "../icons/play-store";
 import AppStoreIcon from "../icons/app-store";
+import Link from "next/link";
 const GetStarted = () => {
   return (
     <section className={styles.getStatedWrapper}>
@@ -24,14 +25,24 @@ const GetStarted = () => {
               Maxxx level.
             </p>
             <div className={styles.playButton}>
-              <Button variant={"primary_outline"} className={styles.button}>
-                <AppStoreIcon />
-                App Store
-              </Button>
-              <Button variant={"primary_outline"} className={styles.button}>
-                <PlayStoreIcon />
-                Play Store
-              </Button>
+              <Link href={"#"} target="_blank">
+                <Button variant={"primary_outline"} className={styles.button}>
+                  <AppStoreIcon />
+                  App Store
+                </Button>
+              </Link>
+
+              <Link
+                href={
+                  "https://play.google.com/store/apps/details?id=com.isports.maxxx"
+                }
+                target="_blank"
+              >
+                <Button variant={"primary_outline"} className={styles.button}>
+                  <PlayStoreIcon />
+                  Play Store
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

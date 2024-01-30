@@ -120,16 +120,41 @@
     line-height: 160%;
     letter-spacing: -0.256px;
     max-width: 600px;
+    text-align: center;
 }
 
 .logoAndTextWrapper {
     display: flex;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
+    justify-content: space-between;
 
 }
 
+
+.playButton {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+
+    .button {
+        height: 64px;
+        width: 194px;
+
+        svg {
+            margin-right: 16px;
+            width: 24px;
+            height: 24px;
+        }
+
+        &:hover {
+            svg path {
+                fill: #2A2C74
+            }
+        }
+
+
+    }
+
+}
 
 @media (max-width:1220px) {
     .mainFooterContainer {
