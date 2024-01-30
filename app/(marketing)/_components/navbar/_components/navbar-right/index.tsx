@@ -21,7 +21,7 @@ const NavbarRight = () => {
         <div className="z-20">
           <Links />
         </div>
-        <Link href={"/contact-us"}>
+        {/* <Link href={"/contact-us"}>
           <Button className="bg-[#2D3035] rounded-2xl text-white h-[60px] w-[160px] z-20 text-md">
             <Image
               className="mr-2"
@@ -32,7 +32,7 @@ const NavbarRight = () => {
             />
             Contact US
           </Button>
-        </Link>
+        </Link> */}
       </div>
       <button
         type="button"

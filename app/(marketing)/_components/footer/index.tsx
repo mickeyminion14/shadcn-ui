@@ -1,31 +1,50 @@
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Mail } from "lucide-react";
 import styles from "./footer.module.scss";
 import FacebookIcon from "./icons/facebook";
 import InstagramIcon from "./icons/instagram";
 import YoutubeIcon from "./icons/youtube";
-import ArrowRight from "./icons/arrow-right";
 import FooterLinks from "./links";
 import Link from "next/link";
+import AppStoreIcon from "@/components/icons/app-store";
+import PlayStoreIcon from "@/components/icons/play-store";
 
 export const Footer = () => {
   return (
     <footer className={styles.mainFooter}>
       <div className={styles.mainFooterContainer}>
-        <div className="flex justify-between">
+        <div className={styles.logoAndTextWrapper}>
           <Logo />
-          <div className="w-full max-w-[860px] text-white text-xl font-light">
-            <div className={styles.heroText}>
-              TRANSFORM YOUR MIND AND ELEVATE YOUR GAME
-            </div>
-            {/* <div className="pt-24">links</div> */}
+          <div className={styles.heroText}>
+            TRANSFORM YOUR MIND AND ELEVATE YOUR GAME
           </div>
         </div>
         <div className="mt-24 flex justify-between">
           <div className="text-white">
-            <div
+            <div className={styles.playButton}>
+              <Link
+                href={"https://apps.apple.com/us/app/maxxx/id6460887590"}
+                target="_blank"
+              >
+                <Button variant={"primary_outline"} className={styles.button}>
+                  <AppStoreIcon />
+                  App Store
+                </Button>
+              </Link>
+
+              <Link
+                href={
+                  "https://play.google.com/store/apps/details?id=com.isports.maxxx"
+                }
+                target="_blank"
+              >
+                <Button variant={"primary_outline"} className={styles.button}>
+                  <PlayStoreIcon />
+                  Play Store
+                </Button>
+              </Link>
+            </div>
+            {/* <div
               className={`${styles.socialmedia} flex justify-between  max-w-[200px]`}
             >
               <Button className="h-16 w-16" variant={"primary_outline"}>
@@ -43,8 +62,8 @@ export const Footer = () => {
                   <YoutubeIcon />
                 </div>
               </Button>
-            </div>
-            <div className="mt-16">
+            </div> */}
+            {/* <div className="mt-16">
               <div className="text-white text-sm font-bold">
                 Subscribe to newsletter
               </div>
@@ -63,7 +82,7 @@ export const Footer = () => {
                   />
                 </label>
               </div>
-            </div>
+            </div> */}
             <div className="mt-8">
               Copyright ©{new Date().getFullYear()}, All Rights Reserved
             </div>

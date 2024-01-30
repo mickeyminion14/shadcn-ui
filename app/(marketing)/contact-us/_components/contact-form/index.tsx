@@ -22,18 +22,18 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import styles from "./contact.module.scss";
-import ArrowRight from "../../_icons/arrow-right";
-import EmailIcon from "../../_icons/email";
-import UserIcon from "../../_icons/user";
-import RoleIcon from "../../_icons/role";
-import PhoneIcon from "../../_icons/phone";
-import MessageIcon from "../../_icons/message";
 import HttpService from "@/lib/http-service";
 import { useState } from "react";
 import { phoneRegex } from "@/lib/constants";
 import ButtonLoaderIcon from "@/components/buttonLoader/buttonLoader";
 import { toast } from "sonner";
 import Link from "next/link";
+import ArrowRight from "@/components/icons/arrow-right";
+import UserIcon from "@/components/icons/user";
+import EmailIcon from "@/components/icons/email";
+import RoleIcon from "@/components/icons/role";
+import PhoneIcon from "@/components/icons/phone";
+import MessageIcon from "@/components/icons/message";
 export const http = new HttpService();
 
 // Design contact us form schema

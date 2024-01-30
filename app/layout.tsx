@@ -72,6 +72,7 @@ export default function RootLayout({
           sizes="16x16"
           href={`${baseUrl}/images/favicon-16x16.png`}
         />
+        <meta name="theme-color" content="blue" />
       </head>
       <body
         style={{

@@ -5,6 +5,7 @@ export interface HeroData {
     button?: {
         text?: string;
         navigateTo?: string;
+        link?: boolean;
     };
 }
 

@@ -9,12 +9,11 @@ const FooterLinks = () => {
 
   const links: { title: string; url: string }[] = [
     { title: "Home", url: "/" },
-    { title: "About", url: "/about-us" },
     { title: "Checkout", url: "/checkout" },
+    { title: "Contact Us", url: "/contact-us" },
   ];
   return (
     <>
-      {" "}
       {links.map((link, idx) => (
         <Link key={idx} href={link.url}>
           <div

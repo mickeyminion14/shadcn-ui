@@ -109,7 +109,7 @@ const CheckoutForm = () => {
   return (
     <section id="checkoutform" className={styles.contactForm}>
       <div className={styles.contactFormContainer}>
-        <h2 className={styles.title}>Connect with us</h2>
+        <h2 className={styles.title}>Complete Your Download</h2>
         <p className={styles.description}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est
           felis, sagittis viverra .

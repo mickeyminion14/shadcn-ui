@@ -37,16 +37,21 @@
   background: #2D3035;
   justify-content: space-between;
 
+  &+.sliderWrapper {
+    margin-top: 96px;
+  }
+
   .infoBlk {
     max-width: 465px;
     padding-left: 80px;
     height: 100%;
     position: relative;
 
-    .button {
+    .buttonIcon {
       width: 64px;
       height: 64px;
       margin-bottom: 90px;
+      pointer-events: none;
     }
 
     .title {
@@ -100,9 +105,44 @@
     height: 560px;
     border-radius: 40px;
     overflow: hidden;
+    margin-left: 40px;
 
     img {
       object-fit: cover;
+    }
+  }
+}
+
+.buttonAction {
+  min-width: 238px;
+  height: 64px;
+  margin-top: 40px;
+
+  svg {
+    margin-left: 16px;
+    transition: transform 0.3s ease-out;
+    animation: none;
+
+    path {
+      stroke: #fff;
+    }
+  }
+
+  &:hover svg {
+    animation: hoverAnimation 1s infinite alternate;
+
+    path {
+      stroke: #000;
+    }
+  }
+
+  @keyframes hoverAnimation {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(4px);
     }
   }
 }
