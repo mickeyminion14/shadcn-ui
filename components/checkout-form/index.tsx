@@ -19,14 +19,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import ArrowRight from "@/components/icons/arrow-right";
 import EmailIcon from "@/components/icons/email";
 import UserIcon from "@/components/icons/user";
 import RoleIcon from "@/components/icons/role";
 import PhoneIcon from "@/components/icons/phone";
-import MessageIcon from "@/components/icons/message";
 import styles from "./checkout-form.module.scss";
 
 import HttpService from "@/lib/http-service";
@@ -55,12 +53,9 @@ const formSchema = z.object({
     .regex(phoneRegex, "Please enter valid mobile number"),
   countryCode: z.string(),
   agree: z.boolean().default(true).optional(),
-  // agree: z.literal<boolean>(true, {
-  //   errorMap: () => ({ message: "Please check the agreement" }),
-  // }),
 });
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ defaultValue }: any) => {
   const [loading, setLoading] = useState(false);
   const roles = [
     { value: "PLAYER", viewValue: "Player" },
@@ -75,7 +70,7 @@ const CheckoutForm = () => {
     defaultValues: {
       name: "",
       email: "",
-      role: "",
+      role: defaultValue?.role || "",
       mobileNo: "",
       countryCode: "+1",
       agree: false,
@@ -111,8 +106,7 @@ const CheckoutForm = () => {
       <div className={styles.contactFormContainer}>
         <h2 className={styles.title}>Complete Your Download</h2>
         <p className={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est
-          felis, sagittis viverra .
+          Fill out the form below to continue.
         </p>
 
         <div className={styles.formWrapper}>
@@ -160,6 +154,7 @@ const CheckoutForm = () => {
                       <Select
                         onValueChange={field.onChange}
                         defaultValue={field.value}
+                        disabled
                       >
                         <FormControl>
                           <SelectTrigger>

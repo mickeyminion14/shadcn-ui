@@ -1,9 +1,6 @@
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import styles from "./footer.module.scss";
-import FacebookIcon from "./icons/facebook";
-import InstagramIcon from "./icons/instagram";
-import YoutubeIcon from "./icons/youtube";
 import FooterLinks from "./links";
 import Link from "next/link";
 import AppStoreIcon from "@/components/icons/app-store";
@@ -19,7 +16,7 @@ export const Footer = () => {
             TRANSFORM YOUR MIND AND ELEVATE YOUR GAME
           </div>
         </div>
-        <div className="mt-24 flex justify-between">
+        <div className={styles.menuWrapper}>
           <div className="text-white">
             <div className={styles.playButton}>
               <Link
