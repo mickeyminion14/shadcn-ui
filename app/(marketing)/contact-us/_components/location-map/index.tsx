@@ -2,8 +2,6 @@
 import Image from "next/image";
 import styles from "./map.module.scss";
 import MapIcon from "./_icons/mapicon";
-import { MouseEventHandler } from "react";
-
 const LocationMap = () => {
   const showMap = (lat: any, lng: any) => {
     var url = "https://maps.google.com/?q=" + lat + "," + lng;

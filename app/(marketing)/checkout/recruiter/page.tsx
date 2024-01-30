@@ -23,10 +23,14 @@ const Recruiter = () => {
     },
   };
 
+  const defaultFormValue = {
+    role: "RECRUITER",
+  };
+
   return (
     <div className="contactUsWrapper">
       <HeroSection heroData={heroObj} />
-      <CheckoutForm />
+      <CheckoutForm defaultValue={defaultFormValue} />
     </div>
   );
 };

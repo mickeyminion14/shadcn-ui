@@ -23,10 +23,14 @@ const Athletes = () => {
     },
   };
 
+  const defaultFormValue = {
+    role: "PLAYER",
+  };
+
   return (
     <div className="contactUsWrapper">
       <HeroSection heroData={heroObj} />
-      <CheckoutForm />
+      <CheckoutForm defaultValue={defaultFormValue} />
     </div>
   );
 };

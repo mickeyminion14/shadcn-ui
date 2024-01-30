@@ -19,23 +19,7 @@ class HttpService {
       timeout: 300000
     });
 
-    const errorHandler = (error: AxiosError<{ message: string; statusCode: number }>) => {
-      if (error && error.response) {
-        const { message, statusCode } = error.response.data;
-        if (this.unauthorizedStatusCodes.includes(statusCode)) {
-          toast.info(message);
-          console.log(message);
-          setTimeout(() => {
-            window.location.replace("/");
-          }, 2000);
-        } else {
-          toast.info(message);
-        }
-      } else {
-        toast.info(error.message);
-      }
-      return error;
-    };
+
     this.axiosInstance.interceptors.request.use(async (config: any) => {
       if (config.headers) {
         config.headers['platform'] = '2';
@@ -54,11 +38,30 @@ class HttpService {
         return response;
       },
       (error) => {
-        errorHandler(error);
+        this.errorHandler(error);
         throw error;
       }
     );
   }
+
+  errorHandler = (error: AxiosError<{ message: string; statusCode: number }>) => {
+    if (error && error.response) {
+      const { message, statusCode } = error.response.data;
+      if (this.unauthorizedStatusCodes.includes(statusCode)) {
+        toast.info(message);
+        console.log(message);
+        setTimeout(() => {
+          window.location.replace("/");
+        }, 2000);
+      } else {
+        toast.info(message);
+      }
+    } else {
+      toast.info(error.message);
+    }
+    return error.response?.data || error;
+  };
+
 
   post<T = any>(url: string, data: any, config?: AxiosRequestConfig<any>) {
     return this.axiosInstance.post<T>(url, data, config);
