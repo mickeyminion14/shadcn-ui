@@ -6,15 +6,15 @@ import CheckoutForm from "@/components/checkout-form";
 
 export function generateMetadata(): Metadata {
   return {
-    title: siteConfig.athletes.name,
-    description: siteConfig.athletes.description,
+    title: siteConfig.coaches.name,
+    description: siteConfig.coaches.description,
   };
 }
 
-const Athletes = () => {
+const Coaches = () => {
   const heroObj: HeroData = {
-    image: "/images/athlete-banner.jpg",
-    title: "Athletes",
+    image: "/images/coaches-banner.jpg",
+    title: "Coaches",
     description: "Help us customize your experience",
     button: {
       text: "Back To Checkout Options",
@@ -31,4 +31,4 @@ const Athletes = () => {
   );
 };
 
-export default Athletes;
+export default Coaches;
