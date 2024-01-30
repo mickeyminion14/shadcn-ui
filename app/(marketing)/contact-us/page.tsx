@@ -4,6 +4,7 @@ import ContactForm from "./_components/contact-form";
 import HeroSection from "@/components/hero-section";
 import { HeroData } from "@/components/hero-section/hero-section.interface";
 import { siteConfig } from "@/config/site";
+import LocationMap from "./_components/location-map";
 // import LocationMap from "./_components/location-map";
 
 export function generateMetadata(): Metadata {
@@ -27,7 +28,7 @@ const ContactUs = () => {
   return (
     <div className="contactUsWrapper">
       <HeroSection heroData={heroObj} />
-      {/* <LocationMap /> */}
+      <LocationMap />
       <ContactForm />
       <GetStarted />
     </div>
