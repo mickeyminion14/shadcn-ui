@@ -106,7 +106,9 @@ const CheckoutForm = ({ defaultValue }: any) => {
       <div className={styles.contactFormContainer}>
         <h2 className={styles.title}>Complete Your Download</h2>
         <p className={styles.description}>
-          Fill out the form below to continue.
+          Thank you for choosing Maxxxx [Player/Coach/Gaurdian] App! You're just
+          a few steps away from completing your download. Please fill details
+          below and proceed to checkout to access our app.
         </p>
 
         <div className={styles.formWrapper}>
