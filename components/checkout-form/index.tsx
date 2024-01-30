@@ -106,8 +106,7 @@ const CheckoutForm = ({ defaultValue }: any) => {
       <div className={styles.contactFormContainer}>
         <h2 className={styles.title}>Complete Your Download</h2>
         <p className={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est
-          felis, sagittis viverra .
+          Fill out the form below to continue.
         </p>
 
         <div className={styles.formWrapper}>
