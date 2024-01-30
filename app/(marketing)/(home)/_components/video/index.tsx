@@ -9,7 +9,7 @@ const VideoSection = () => {
         muted
         loop
       >
-        <source src="/videos/draft.mp4" />
+        <source src="https://media.maxxxperformance.com/isport/MAXXX+APP-VIDEO-2.mp4" />
       </video>
     </section>
   );

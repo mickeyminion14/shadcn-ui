@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import React, { useState, useEffect, useCallback } from "react";
 import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import Image from "next/image";
 import SettingIcon from "../icons/setting";
 import styles from "./our-mission.module.scss";
 import Link from "next/link";
@@ -28,19 +27,9 @@ type PropType = {
 const MaxExperience = () => {
   const options: EmblaOptionsType = { axis: "x", loop: true, duration: 60 };
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
-  const scrollPrev = useCallback(
-    () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi]
-  );
-  const scrollNext = useCallback(
-    () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi]
-  );
   const scrollTo = useCallback(
     (index: number) => emblaApi && emblaApi.scrollTo(index),
     [emblaApi]
@@ -52,8 +41,6 @@ const MaxExperience = () => {
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setSelectedIndex(emblaApi.selectedScrollSnap());
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
   }, []);
 
   useEffect(() => {
@@ -82,7 +69,7 @@ const MaxExperience = () => {
           muted
           loop
         >
-          <source src="/videos/max-experience.mp4" />
+          <source src="https://media.maxxxperformance.com/isport/max-experience.mp4" />
         </video>
         <div className={styles.maxExperienceWrapper}>
           <div className={styles.maxExperienceSlider}>
