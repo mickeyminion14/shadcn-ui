@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { HeroProps } from "./hero-section.interface";
 import Image from "next/image";
 import ArrowDownIcon from "../icons/arrow-down";
+import Link from "next/link";
+import ArrowLeft from "../icons/arrow-left";
 
 const HeroSection = (props: HeroProps) => {
   function scrollToTop(target: any) {
@@ -22,16 +24,24 @@ const HeroSection = (props: HeroProps) => {
           {description && (
             <p className={styles.description}>{heroData?.description}</p>
           )}
-          {button && (
-            <Button
-              variant={"primary_outline"}
-              className={styles.button}
-              onClick={scrollToTop.bind(null, button?.navigateTo)}
-            >
-              {button?.text}
-              <ArrowDownIcon />
-            </Button>
-          )}
+          {button &&
+            (button?.link ? (
+              <Link href={button?.navigateTo || "/"}>
+                <Button variant={"primary_outline"} className={styles.button}>
+                  <ArrowLeft />
+                  <span>{button?.text}</span>
+                </Button>
+              </Link>
+            ) : (
+              <Button
+                variant={"primary_outline"}
+                className={styles.button}
+                onClick={scrollToTop.bind(null, button?.navigateTo)}
+              >
+                <span>{button?.text}</span>
+                <ArrowDownIcon />
+              </Button>
+            ))}
         </div>
       </div>
     </section>

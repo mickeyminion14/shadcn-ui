@@ -4,34 +4,33 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import WhoWeAre from "@/components/who-we-are";
 import MaxExperience from "@/components/max-experience";
+import CheckoutForm from "@/components/checkout-form";
 
 export function generateMetadata(): Metadata {
   return {
-    title: siteConfig.checkout.name,
-    description: siteConfig.checkout.description,
+    title: siteConfig.athletes.name,
+    description: siteConfig.athletes.description,
   };
 }
 
-const Checkout = () => {
+const Athletes = () => {
   const heroObj: HeroData = {
     image: "/images/about/1-about_banner.jpg",
-    title: "Transform Your Mind Elevate Your Game",
-    // button: {
-    //   text: "Meet Our Team",
-    //   navigateTo: "#meetourteam",
-    // },
+    title: "Coaches",
+    description: "Help us customize your experience",
+    button: {
+      text: "Back To Checkout Options",
+      navigateTo: "/checkout",
+      link: true,
+    },
   };
 
   return (
     <div className="contactUsWrapper">
       <HeroSection heroData={heroObj} />
-      <WhoWeAre />
-      <MaxExperience />
-      {/* <LocationMap /> */}
-      {/* <CheckoutForm />
-      <DownloadHere /> */}
+      <CheckoutForm />
     </div>
   );
 };
 
-export default Checkout;
+export default Athletes;

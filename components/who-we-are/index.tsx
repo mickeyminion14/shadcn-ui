@@ -7,6 +7,7 @@ import Image from "next/image";
 import SettingIcon from "../icons/setting";
 import styles from "./who-we-are.module.scss";
 import ArrowRight from "../icons/arrow-right";
+import Link from "next/link";
 
 const slidesData = [
   {
@@ -15,7 +16,7 @@ const slidesData = [
     img: "/images/about/wwr1.png",
     button: {
       text: "Select Athlete",
-      link: "athletes",
+      link: "/checkout/athletes",
     },
   },
   {
@@ -24,7 +25,7 @@ const slidesData = [
     img: "/images/about/wwr2.png",
     button: {
       text: "Select Coaches",
-      link: "coaches",
+      link: "/checkout/coaches",
     },
   },
   {
@@ -33,7 +34,7 @@ const slidesData = [
     img: "/images/about/wwr3.png",
     button: {
       text: "Select Recruiter",
-      link: "recruiter",
+      link: "/checkout/recruiter",
     },
   },
 ];
@@ -119,12 +120,14 @@ const WhoWeAre: React.FC<PropType> = ({
                     {("0" + (selectedIndex + 1)).slice(-2)}/
                     {("0" + slidesData?.length).slice(-2)}
                   </div> */}
-                  <Button
-                    variant={"primary_outline"}
-                    className={styles.buttonAction}
-                  >
-                    Select Athlete <ArrowRight />
-                  </Button>
+                  <Link href={item?.button?.link || "/"}>
+                    <Button
+                      variant={"primary_outline"}
+                      className={styles.buttonAction}
+                    >
+                      {item?.button?.text} <ArrowRight />
+                    </Button>
+                  </Link>
                 </div>
               </div>
               // </div>
