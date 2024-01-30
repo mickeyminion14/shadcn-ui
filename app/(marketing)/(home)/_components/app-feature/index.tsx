@@ -58,7 +58,7 @@ const AppMainFeature = () => {
               </div>
             </div>
             <div className="mt-12">
-              <Link href="/about-us">
+              <Link href="/checkout">
                 <Button
                   variant={"primary_outline"}
                   className={styles.buttonAction}
