@@ -11,18 +11,15 @@ export const Footer = () => {
   return (
     <footer className={styles.mainFooter}>
       <div className={styles.mainFooterContainer}>
-        <div className="flex justify-between">
+        <div className={styles.logoAndTextWrapper}>
           <Logo />
-          <div className="w-full max-w-[860px] text-white text-xl font-light">
-            <div className={styles.heroText}>
-              TRANSFORM YOUR MIND AND ELEVATE YOUR GAME
-            </div>
-            {/* <div className="pt-24">links</div> */}
+          <div className={styles.heroText}>
+            TRANSFORM YOUR MIND AND ELEVATE YOUR GAME
           </div>
         </div>
         <div className="mt-24 flex justify-between">
-          <div className="text-white">
-            <div
+          {/* <div className="text-white"> */}
+          {/* <div
               className={`${styles.socialmedia} flex justify-between  max-w-[200px]`}
             >
               <Button className="h-16 w-16" variant={"primary_outline"}>
@@ -40,8 +37,8 @@ export const Footer = () => {
                   <YoutubeIcon />
                 </div>
               </Button>
-            </div>
-            {/* <div className="mt-16">
+            </div> */}
+          {/* <div className="mt-16">
               <div className="text-white text-sm font-bold">
                 Subscribe to newsletter
               </div>
@@ -61,10 +58,10 @@ export const Footer = () => {
                 </label>
               </div>
             </div> */}
-            <div className="mt-8">
+          {/* <div className="mt-8">
               Copyright ©{new Date().getFullYear()}, All Rights Reserved
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
           <div className={styles.footerLinkWrap}>
             <div className={styles.footerLinkWrapInr}>
               <div className={styles.footerLinkHeading}>Main SiteMap</div>
@@ -100,6 +97,9 @@ export const Footer = () => {
               </Link> */}
             </div>
           </div>
+        </div>
+        <div className="mt-8 text-center">
+          Copyright ©{new Date().getFullYear()}, All Rights Reserved
         </div>
       </div>
     </footer>

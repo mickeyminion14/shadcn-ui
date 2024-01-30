@@ -4,7 +4,7 @@ import Image from "next/image";
 export const Logo = () => {
   return (
     <Link href="/" className="z-20">
-      <div className="hover:opacity-75 transition  gap-x-2 w-[180px] h-[100%] relative">
+      <div className="hover:opacity-75 transition  gap-x-2 w-[250px] h-[100%] relative">
         <svg
           width="234"
           height="50"
