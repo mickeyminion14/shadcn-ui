@@ -15,8 +15,8 @@ export function generateMetadata(): Metadata {
 
 const Athletes = () => {
   const heroObj: HeroData = {
-    image: "/images/about/1-about_banner.jpg",
-    title: "Coaches",
+    image: "/images/athlete-banner.jpg",
+    title: "Athletes",
     description: "Help us customize your experience",
     button: {
       text: "Back To Checkout Options",
